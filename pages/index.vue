@@ -2,13 +2,16 @@
   <div>
     <div id="mapContainer" class="map"></div>
     <div :class="{ 'drawer--is-active': drawerOpen }" class="drawer fixed">
-      <h2 class="text-xl text-gray-900 leading-tight">title</h2>
-      <p class="text-base text-gray-600 leading-normal">content</p>
-      <button
-        class="w-auto block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      <h2 class="mb-4 text-xl text-gray-900 leading-tight">The Svolvær goat</h2>
+      <p class="mb-8 text-base text-gray-600 leading-normal">
+        Stand on top of the famous Svolvær Goat!
+      </p>
+      <a
+        href="https://www.youtube.com/watch?v=Ebozwl9eR80"
+        class="w-auto block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center"
       >
-        Watch Video
-      </button>
+        Watch Now!
+      </a>
       <span @click="drawerOpen = false" class="close">
         &times;
       </span>
