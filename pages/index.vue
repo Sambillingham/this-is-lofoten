@@ -139,6 +139,10 @@ export default {
           },
         }) // 'natural-point-label',
 
+        map.on('dragstart', function() {
+          app.drawerOpen = false
+        })
+
         map.on('click', function(e) {
           const features = map.queryRenderedFeatures(e.point, {
             layers: ['points'], // replace this with the name of the layer
