@@ -161,6 +161,7 @@ export default {
             center: feature.geometry.coordinates,
             zoom: 11,
             speed: 1.5,
+            offset: [0, -150],
           })
 
           // new mapboxgl.Popup({ offset: [0, -15] })
