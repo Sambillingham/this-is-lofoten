@@ -37,10 +37,22 @@ export default {
       drawerOpen: false,
       drawerTitle: '',
       drawerDescription: '',
+      windowWidth: window.innerWidth,
     }
   },
 
+  computed: {
+    isMobile() {
+      return this.windowWidth <= 900
+    },
+  },
+
   mounted() {
+    window.addEventListener(
+      'resize',
+      () => (this.windowWidth = window.innerWidth),
+    )
+
     const app = this
     mapboxgl.accessToken = this.accessToken
 
@@ -50,7 +62,7 @@ export default {
       center: [14.5682, 68.2343],
       zoom: 6.2,
       maxBounds: [
-        [12.2, 66.6],
+        [11.8, 66.6],
         [15.8, 69.5],
       ],
     })
@@ -124,11 +136,13 @@ export default {
           app.drawerDescription = feature.properties.description
           app.drawerOpen = true
 
+          const offset = app.isMobile ? [0, -150] : [-150, 0]
+
           map.flyTo({
             center: feature.geometry.coordinates,
             zoom: 11,
             speed: 1.5,
-            offset: [0, -150],
+            offset: [...offset],
           })
         })
       })
@@ -160,8 +174,24 @@ export default {
   transition: 300ms ease-in-out;
   position: relative;
 }
+
 .drawer--is-active {
   transform: translateY(55vh);
+}
+
+@media screen and (min-width: 900px) {
+  .drawer {
+    bottom: 0;
+    right: 0;
+    top: 0;
+    transform: translateX(100vw);
+    width: 45vw;
+    height: 100vh;
+  }
+
+  .drawer--is-active {
+    transform: translateX(55vw);
+  }
 }
 
 .close {
