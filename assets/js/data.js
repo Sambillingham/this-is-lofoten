@@ -1,6 +1,6 @@
 export const videoData = [
   {
-    coordinates: [68.232056, 14.387833],
+    coordinates: [14.387833, 68.232056],
     title: 'Calm day in snowy mountains Lofoten Småtindan',
     description: '',
     thumbnail: '',
@@ -9,28 +9,28 @@ export const videoData = [
     categories: ['Austvågøy'],
   },
   {
-    coordinates: [68.2462474, 14.5875426],
+    coordinates: [14.5875426, 68.2462474],
     title: 'Svolværgeita in 360',
     description: '',
     link: 'https://www.youtube.com/watch?v=cFvkC9WzMtI',
     categories: ['Austvågøy'],
   },
   {
-    coordinates: [68.246917, 14.509083],
+    coordinates: [14.509083, 68.246917],
     title: 'Kongstind - Lofoten 360 ',
     description: '',
     link: 'https://www.youtube.com/watch?v=jXKmHpAQMdM',
     categories: ['Austvågøy'],
   },
   {
-    coordinates: [68.242111, 14.668222],
+    coordinates: [14.668222, 68.242111],
     title: 'Cessna flight over Lofoten',
     description: '',
     link: 'https://www.youtube.com/watch?v=eDx-F-RBdc8',
     categories: ['Vestvågøya'],
   },
   {
-    coordinates: [68.232056, 14.387833],
+    coordinates: [13.077222, 67.927],
     title: 'Flying over Reinebringen in the midnight sun',
     description: '',
     link: 'https://www.youtube.com/watch?v=SMU8ObOUw0k',
@@ -38,11 +38,11 @@ export const videoData = [
     categories: ['Moskenesøy'],
   },
   {
-    coordinates: [68.232056, 14.387833],
+    coordinates: [13.571389, 68.216639],
     title: 'Aerial from Himmeltinden',
     description: '',
     link: 'https://www.youtube.com/watch?v=dBWjef-2nn8',
     videoID: 'dBWjef-2nn8',
     categories: ['Vestvågøya'],
   },
-];
+]

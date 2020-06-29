@@ -2,9 +2,11 @@
   <div>
     <div id="mapContainer" class="map"></div>
     <div :class="{ 'drawer--is-active': drawerOpen }" class="drawer fixed">
-      <h2 class="mb-4 text-xl text-gray-900 leading-tight">The Svolvær goat</h2>
+      <h2 class="mb-4 text-xl text-gray-900 leading-tight">
+        {{ drawerTitle }}
+      </h2>
       <p class="mb-8 text-base text-gray-600 leading-normal">
-        Stand on top of the famous Svolvær Goat!
+        {{ drawerDescription }}
       </p>
       <a
         href="https://www.youtube.com/watch?v=Ebozwl9eR80"
@@ -22,6 +24,8 @@
 <script>
 import mapboxgl from 'mapbox-gl'
 
+import { videoData } from '@/assets/js/data'
+
 export default {
   components: {},
 
@@ -31,6 +35,8 @@ export default {
         'pk.eyJ1Ijoic2JpbGxpbmdoYW1tYXAiLCJhIjoiY2ticWtoMGdtMDhldzMxbnQzbmt5ZHY0dSJ9.4sFiMDEQ5QA_3yRoqCDqiw',
 
       drawerOpen: false,
+      drawerTitle: '',
+      drawerDescription: '',
     }
   },
 
@@ -61,62 +67,19 @@ export default {
           type: 'geojson',
           data: {
             type: 'FeatureCollection',
-            features: [
-              {
+            features: videoData.map((v) => {
+              return {
                 type: 'Feature',
                 geometry: {
                   type: 'Point',
-                  coordinates: [14.5682, 68.2343],
+                  coordinates: v.coordinates,
                 },
                 properties: {
-                  title: 'Mapbox',
-                  description: 'Washington, D.C.',
+                  title: v.title,
+                  description: '',
                 },
-              },
-              {
-                type: 'Feature',
-                geometry: {
-                  type: 'Point',
-                  coordinates: [14.4682, 68.3343],
-                },
-                properties: {
-                  title: 'Mapbox',
-                  description: 'Washington, D.C.',
-                },
-              },
-              {
-                type: 'Feature',
-                geometry: {
-                  type: 'Point',
-                  coordinates: [14.0682, 68.3343],
-                },
-              },
-              {
-                type: 'Feature',
-                geometry: {
-                  type: 'Point',
-                  coordinates: [13.3682, 68.0343],
-                },
-              },
-              {
-                type: 'Feature',
-                geometry: {
-                  type: 'Point',
-                  coordinates: [13.3482, 68.0343],
-                },
-              },
-              {
-                type: 'Feature',
-                geometry: {
-                  type: 'Point',
-                  coordinates: [13.3382, 68.0343],
-                },
-                properties: {
-                  title: 'Mapbox',
-                  description: 'Washington, D.C.',
-                },
-              },
-            ],
+              }
+            }),
           },
           cluster: true,
           clusterMaxZoom: 14, // Max zoom to cluster points on
@@ -157,8 +120,9 @@ export default {
 
           const feature = features[0]
 
+          app.drawerTitle = feature.properties.title
+          app.drawerDescription = feature.properties.description
           app.drawerOpen = true
-          console.log(feature.properties.title, feature.properties.description)
 
           map.flyTo({
             center: feature.geometry.coordinates,
@@ -166,17 +130,6 @@ export default {
             speed: 1.5,
             offset: [0, -150],
           })
-
-          // new mapboxgl.Popup({ offset: [0, -15] })
-          //   .setLngLat(feature.geometry.coordinates)
-          //   .setHTML(
-          //     '<h3>' +
-          //       feature.properties.title +
-          //       '</h3><p>' +
-          //       feature.properties.description +
-          //       '</p>',
-          //   )
-          //   .addTo(map)
         })
       })
     })
