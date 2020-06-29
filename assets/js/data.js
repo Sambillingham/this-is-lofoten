@@ -1,0 +1,48 @@
+export const videoData = [
+  {
+    coordinates: [68.232056, 14.387833],
+    title: 'Calm day in snowy mountains Lofoten Småtindan',
+    description: '',
+    thumbnail: '',
+    link: 'https://www.youtube.com/watch?v=V4TEhrYG168',
+    videoID: 'V4TEhrYG168',
+    categories: ['Austvågøy'],
+  },
+  {
+    coordinates: [68.2462474, 14.5875426],
+    title: 'Svolværgeita in 360',
+    description: '',
+    link: 'https://www.youtube.com/watch?v=cFvkC9WzMtI',
+    categories: ['Austvågøy'],
+  },
+  {
+    coordinates: [68.246917, 14.509083],
+    title: 'Kongstind - Lofoten 360 ',
+    description: '',
+    link: 'https://www.youtube.com/watch?v=jXKmHpAQMdM',
+    categories: ['Austvågøy'],
+  },
+  {
+    coordinates: [68.242111, 14.668222],
+    title: 'Cessna flight over Lofoten',
+    description: '',
+    link: 'https://www.youtube.com/watch?v=eDx-F-RBdc8',
+    categories: ['Vestvågøya'],
+  },
+  {
+    coordinates: [68.232056, 14.387833],
+    title: 'Flying over Reinebringen in the midnight sun',
+    description: '',
+    link: 'https://www.youtube.com/watch?v=SMU8ObOUw0k',
+    videoID: 'SMU8ObOUw0k',
+    categories: ['Moskenesøy'],
+  },
+  {
+    coordinates: [68.232056, 14.387833],
+    title: 'Aerial from Himmeltinden',
+    description: '',
+    link: 'https://www.youtube.com/watch?v=dBWjef-2nn8',
+    videoID: 'dBWjef-2nn8',
+    categories: ['Vestvågøya'],
+  },
+];
