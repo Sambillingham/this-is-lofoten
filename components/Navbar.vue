@@ -89,6 +89,12 @@ export default {
   transition: 200ms ease-in-out;
 }
 
+@media screen and (min-width: 900px) {
+  .nav-list {
+    width: 320px;
+  }
+}
+
 .nav-list--active {
   transform: translateY(0);
 }
