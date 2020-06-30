@@ -10,16 +10,17 @@
         {{ drawerDescription }}
       </p>
       <img v-if="isMobile" :src="drawerPlaceholder" class="mb-4" />
-      <iframe
-        v-else
-        :src="`https://www.youtube.com/embed/${drawerVideoID}`"
-        width="100%"
-        height="400px"
-        class="mb-4"
-        frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+      <div v-else class="iframe-container">
+        <iframe
+          :src="`https://www.youtube.com/embed/${drawerVideoID}`"
+          width="100%"
+          height="400px"
+          class="mb-4"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
       <a
         v-if="isMobile"
         :href="`https://www.youtube.com/watch?v=${drawerVideoID}`"
@@ -233,5 +234,19 @@ export default {
   font-size: 1.8rem;
   top: 0;
   right: 0;
+}
+.iframe-container {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.iframe-container iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 </style>

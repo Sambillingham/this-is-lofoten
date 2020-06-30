@@ -50,7 +50,7 @@ export const categories = [
   'Flakstadøy',
   'Moskenesøy',
   'Værøy',
-  'Sping',
+  'Spring',
   'Summer',
   'Autumn',
   'Winter',
