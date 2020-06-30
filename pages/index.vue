@@ -68,12 +68,8 @@ export default {
 
   mounted() {
     window.addEventListener('resize', () => {
-      console.log(this.windowWidth)
       return (this.windowWidth = window.innerWidth)
     })
-
-    console.log(this.windowWidth)
-    console.log(this.isMobile)
 
     const app = this
     mapboxgl.accessToken = this.accessToken
