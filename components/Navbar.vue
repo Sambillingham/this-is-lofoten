@@ -7,15 +7,19 @@
     </div>
     <div :class="{ 'nav-list--active': navIsOpen }" class="nav-list">
       <h1>This is Lofoten</h1>
+      <nuxt-link to="/" v-if="!isHomePage">
+        <h2>Map</h2>
+      </nuxt-link>
       <h2>Categories</h2>
       <div class="categories">
-        <div
+        <nuxt-link
+          :to="`/category/${category.name}`"
           v-for="category in navGroups"
           :key="category.name"
           class="category"
         >
           {{ category.name }}
-        </div>
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -34,6 +38,10 @@ export default {
   },
 
   computed: {
+    isHomePage() {
+      return this.$route.path === '/'
+    },
+
     navGroups() {
       return categories.map((cat) => {
         return {
@@ -94,8 +102,8 @@ export default {
   margin-bottom: 1rem;
   font-size: 0.875rem;
   background-color: #fafafa;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 }
+
 .nav-list h2 {
   font-weight: 500;
   letter-spacing: 0.01rem;
@@ -104,10 +112,12 @@ export default {
 }
 .categories {
   padding: 0 1rem 1rem;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 
 .category {
   padding: 0.25rem;
   cursor: pointer;
+  display: block;
 }
 </style>
