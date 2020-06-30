@@ -1,20 +1,33 @@
 <template>
   <div>
+    <Navbar />
     <div id="mapContainer" class="map"></div>
     <div :class="{ 'drawer--is-active': drawerOpen }" class="drawer fixed">
-      <h2 class="mb-4 text-xl text-gray-900 leading-tight">
+      <h2 class="mb-4 text-xl text-gray-900 leading-tight capitalize">
         {{ drawerTitle }}
       </h2>
       <p class="mb-8 text-base text-gray-600 leading-normal">
         {{ drawerDescription }}
       </p>
+      <img v-if="isMobile" :src="drawerPlaceholder" class="mb-4" />
+      <iframe
+        v-else
+        :src="`https://www.youtube.com/embed/${drawerVideoID}`"
+        width="100%"
+        height="400px"
+        class="mb-4"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
       <a
-        href="https://www.youtube.com/watch?v=Ebozwl9eR80"
+        v-if="isMobile"
+        :href="`https://www.youtube.com/watch?v=${drawerVideoID}`"
         class="w-auto block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center"
       >
         Watch Now!
       </a>
-      <span @click="drawerOpen = false" class="close">
+      <span @click="drawerOpen = false" class="close cursor-pointer">
         &times;
       </span>
     </div>
@@ -26,8 +39,12 @@ import mapboxgl from 'mapbox-gl'
 
 import { videoData } from '@/assets/js/data'
 
+import Navbar from '@/components/Navbar'
+
 export default {
-  components: {},
+  components: {
+    Navbar,
+  },
 
   data() {
     return {
@@ -37,6 +54,8 @@ export default {
       drawerOpen: false,
       drawerTitle: '',
       drawerDescription: '',
+      drawerPlaceholder: 'http://placehold.it/1280x720',
+      drawerVideoID: '',
       windowWidth: window.innerWidth,
     }
   },
@@ -48,10 +67,13 @@ export default {
   },
 
   mounted() {
-    window.addEventListener(
-      'resize',
-      () => (this.windowWidth = window.innerWidth),
-    )
+    window.addEventListener('resize', () => {
+      console.log(this.windowWidth)
+      return (this.windowWidth = window.innerWidth)
+    })
+
+    console.log(this.windowWidth)
+    console.log(this.isMobile)
 
     const app = this
     mapboxgl.accessToken = this.accessToken
@@ -89,6 +111,7 @@ export default {
                 properties: {
                   title: v.title,
                   description: '',
+                  videoID: v.videoID,
                 },
               }
             }),
@@ -134,6 +157,7 @@ export default {
 
           app.drawerTitle = feature.properties.title
           app.drawerDescription = feature.properties.description
+          app.drawerVideoID = feature.properties.videoID
           app.drawerOpen = true
 
           const offset = app.isMobile ? [0, -150] : [-150, 0]
@@ -158,11 +182,6 @@ export default {
   height: 100%;
 }
 
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
 .drawer {
   bottom: 0;
   left: 0;
@@ -173,6 +192,9 @@ export default {
   transform: translateY(100vh);
   transition: 300ms ease-in-out;
   position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .drawer--is-active {
@@ -193,6 +215,21 @@ export default {
     transform: translateX(55vw);
   }
 }
+
+/* @media (orientation: landscape) {
+  .drawer {
+    bottom: 0;
+    right: 0;
+    top: 0;
+    transform: translateX(100vw);
+    width: 45vw;
+    height: 100vh;
+  }
+
+  .drawer--is-active {
+    transform: translateX(55vw);
+  }
+} */
 
 .close {
   position: absolute;
