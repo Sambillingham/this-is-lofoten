@@ -25,12 +25,11 @@
         v-if="isMobile"
         :href="`https://www.youtube.com/watch?v=${drawerVideoID}`"
         class="w-auto block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center"
+        >Watch Now!</a
       >
-        Watch Now!
-      </a>
-      <span @click="drawerOpen = false" class="close cursor-pointer">
-        &times;
-      </span>
+      <span @click="drawerOpen = false" class="close cursor-pointer"
+        >&times;</span
+      >
     </div>
   </div>
 </template>
@@ -154,6 +153,7 @@ export default {
 
           app.drawerTitle = feature.properties.title
           app.drawerDescription = feature.properties.description
+          app.drawerPlaceholder = feature.properties.thumbnail
           app.drawerVideoID = feature.properties.videoID
           app.drawerOpen = true
 

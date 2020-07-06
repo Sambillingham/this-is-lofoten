@@ -1,11 +1,14 @@
 <template>
   <div>
     <Navbar />
-    <h2>{{ category }}</h2>
+    <h2 class="content-title">{{ category }}</h2>
     <div class="content">
       <div v-for="video in currentContent" :key="video" class="video">
         <a :href="`https://www.youtube.com/watch?v=${video.videoID}`">
-          <img v-if="isMobile" src="http://placehold.it/1280x720" />
+          <img
+            v-if="isMobile"
+            :src="require(`~/assets/img/${video.thumbnail}`)"
+          />
           <div v-else class="iframe-container">
             <iframe
               :src="`https://www.youtube.com/embed/${video.videoID}`"
@@ -63,6 +66,17 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 2rem;
+}
+
+.content-title {
+}
+@media screen and (min-width: 900px) {
+  .content-title {
+    padding-left: 360px;
+  }
+  .content {
+    padding-left: 360px;
+  }
 }
 
 .video {

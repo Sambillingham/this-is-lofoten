@@ -7,8 +7,14 @@
     </div>
     <div :class="{ 'nav-list--active': navIsOpen }" class="nav-list">
       <h1>This is Lofoten</h1>
-      <nuxt-link to="/" v-if="!isHomePage">
+      <nuxt-link to="/">
         <h2>Map</h2>
+      </nuxt-link>
+      <nuxt-link to="/">
+        <h2>About</h2>
+      </nuxt-link>
+      <nuxt-link to="/">
+        <h2>Contact</h2>
       </nuxt-link>
       <h2>Categories</h2>
       <div class="categories">
@@ -70,6 +76,12 @@ export default {
   cursor: pointer;
 }
 
+@media screen and (min-width: 900px) {
+  .nav-icon {
+    display: none;
+  }
+}
+
 .nav-icon span {
   height: 3px;
   width: 100%;
@@ -87,11 +99,14 @@ export default {
   text-align: center;
   transform: translateY(-100%);
   transition: 200ms ease-in-out;
+  box-shadow: 0 3px 3px rgba(33, 33, 33, 0.1);
 }
 
 @media screen and (min-width: 900px) {
   .nav-list {
     width: 320px;
+    transform: translateY(0);
+    box-shadow: 0 3px 13px rgba(33, 33, 33, 0.1);
   }
 }
 
@@ -102,23 +117,35 @@ export default {
 .nav-list h1 {
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.2rem;
   padding: 1rem;
   border-bottom: solid 1px;
   margin-bottom: 1rem;
-  font-size: 0.875rem;
+  /* font-size: 0.875rem; */
   background-color: #fafafa;
+  color: #232323;
+  display: inline-block;
+  border: solid 2px #232323;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 900px) {
+  .nav-list h1 {
+    margin-top: 2rem;
+  }
 }
 
 .nav-list h2 {
   font-weight: 500;
-  letter-spacing: 0.01rem;
+  letter-spacing: 0.05rem;
   padding: 0.5rem;
   font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
 }
 .categories {
   padding: 0 1rem 1rem;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 
 .category {
