@@ -100,7 +100,6 @@ export default {
   width: 100%;
   transform: translateY(-100%);
   transition: 200ms ease-in-out;
-  box-shadow: 0 3px 3px rgba(33, 33, 33, 0.1);
   padding: 0 3.5rem;
 }
 
@@ -115,6 +114,7 @@ export default {
 
 .nav-list--active {
   transform: translateY(0);
+  box-shadow: 0 3px 3px rgba(33, 33, 33, 0.1);
 }
 
 .nav-list h1 {

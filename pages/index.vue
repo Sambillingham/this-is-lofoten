@@ -306,7 +306,7 @@ export default {
 
 .drawer--is-active {
   transform: translateY(55vh);
-  position: relative;
+  position: fixed;
 }
 
 @media screen and (min-width: 900px) {
@@ -429,9 +429,16 @@ export default {
 }
 
 .intro__description {
-  max-width: 500px;
+  max-width: 280px;
+  margin: 0 auto;
   text-align: left;
 }
+@media screen and (min-width: 900px) {
+  .intro__description {
+    max-width: 500px;
+  }
+}
+
 .intro__description p {
   margin-bottom: 2rem;
 }

@@ -68,8 +68,6 @@ export default {
   padding: 2rem;
 }
 
-.content-title {
-}
 @media screen and (min-width: 900px) {
   .content-title {
     padding-left: 360px;
