@@ -204,6 +204,7 @@ export default {
             'circle-color': '#000000',
             'circle-radius': 12,
             'circle-translate': [0, 33],
+            'circle-translate-anchor': ''
           },
         })
 
@@ -397,7 +398,7 @@ export default {
 .intro__container {
   position: relative;
   background: rgba(255, 255, 255, 0.9);
-  padding: 4rem;
+  padding: 2rem 4rem;
   text-align: center;
 }
 @media screen and (min-width: 900px) {
