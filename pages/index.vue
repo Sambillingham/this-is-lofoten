@@ -204,7 +204,6 @@ export default {
             'circle-color': '#000000',
             'circle-radius': 12,
             'circle-translate': [0, 33],
-            'circle-translate-anchor': ''
           },
         })
 
