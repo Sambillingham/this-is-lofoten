@@ -1,16 +1,57 @@
 <template>
   <div>
+    <div
+      v-if="initialLoad"
+      class="intro"
+      :class="{ 'intro--hidden': !initialLoad }"
+    >
+      <video width="100%" height="100%" loop autoplay muted>
+        <source :src="require(`~/assets/video/bg.mp4`)" type="video/mp4" />
+      </video>
+      <div class="intro__container">
+        <header><h1>This Is Lofoten</h1></header>
+        <div class="intro__description">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+            omnis illo sapiente ea in rem doloribus pariatur quibusdam, odit
+            suscipit consequuntur quo ducimus consequatur amet! Deleniti amet
+            possimus accusamus minus!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+            omnis illo sapiente ea in rem doloribus pariatur quibusdam, odit
+            suscipit consequuntur quo ducimus consequatur amet! Deleniti amet
+            possimus accusamus minus!
+          </p>
+        </div>
+        <span class="btn" @click="initialLoad = false">
+          Continue
+        </span>
+      </div>
+    </div>
+
     <Navbar />
     <div id="mapContainer" class="map"></div>
     <div :class="{ 'drawer--is-active': drawerOpen }" class="drawer fixed">
       <h2 class="mb-4 text-xl text-gray-900 leading-tight capitalize">
         {{ drawerTitle }}
       </h2>
-      <p class="mb-8 text-base text-gray-600 leading-normal">
-        {{ drawerDescription }}
-      </p>
-      <img v-if="isMobile" :src="drawerPlaceholder" class="mb-4" />
-      <div v-else class="iframe-container">
+      <div
+        v-if="!isMobile"
+        v-html="drawerDescription"
+        class="mb-8 text-base text-gray-900 leading-normal"
+      ></div>
+      <a
+        v-if="isMobile"
+        :href="`https://www.youtube.com/watch?v=${drawerVideoID}`"
+      >
+        <img
+          v-if="drawerThumbnail"
+          :src="require(`~/assets/img/${drawerThumbnail}`)"
+          class="mb-4"
+        />
+      </a>
+      <div v-if="!isMobile" class="iframe-container">
         <iframe
           :src="`https://www.youtube.com/embed/${drawerVideoID}`"
           width="100%"
@@ -54,9 +95,10 @@ export default {
       drawerOpen: false,
       drawerTitle: '',
       drawerDescription: '',
-      drawerPlaceholder: 'http://placehold.it/1280x720',
+      drawerThumbnail: '',
       drawerVideoID: '',
       windowWidth: window.innerWidth,
+      initialLoad: true,
     }
   },
 
@@ -66,10 +108,26 @@ export default {
     },
   },
 
+  methods: {
+    checkCookie() {
+      if (
+        !document.cookie
+          .split('; ')
+          .find((row) => row.startsWith('initialLoad'))
+      ) {
+        this.initialLoad = true
+        document.cookie =
+          'initialLoad=true; expires=Fri, 31 Dec 9999 23:59:59 GMT'
+      }
+    },
+  },
+
   mounted() {
     window.addEventListener('resize', () => {
       return (this.windowWidth = window.innerWidth)
     })
+
+    // this.checkCookie()
 
     const app = this
     mapboxgl.accessToken = this.accessToken
@@ -106,8 +164,9 @@ export default {
                 },
                 properties: {
                   title: v.title,
-                  description: '',
+                  description: v.description,
                   videoID: v.videoID,
+                  thumbnail: v.thumbnail,
                 },
               }
             }),
@@ -136,8 +195,54 @@ export default {
           },
         }) // 'natural-point-label',
 
+        map.addLayer({
+          id: 'clusters',
+          type: 'circle',
+          source: 'point',
+          filter: ['has', 'point_count'],
+          paint: {
+            'circle-color': '#000000',
+            'circle-radius': 12,
+            'circle-translate': [0, 35],
+          },
+        })
+
+        map.addLayer({
+          id: 'cluster-count',
+          type: 'symbol',
+          source: 'point',
+          filter: ['has', 'point_count'],
+          layout: {
+            'text-field': '{point_count_abbreviated}',
+            'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+            'text-size': 18,
+            'text-offset': [0, 2],
+          },
+          paint: {
+            'text-color': 'white',
+          },
+        })
+
         map.on('dragstart', function() {
           app.drawerOpen = false
+        })
+
+        map.on('click', 'clusters', function(e) {
+          const features = map.queryRenderedFeatures(e.point, {
+            layers: ['clusters'],
+          })
+          const clusterId = features[0].properties.cluster_id
+
+          map
+            .getSource('point')
+            .getClusterExpansionZoom(clusterId, function(err, zoom) {
+              if (err) return
+              map.easeTo({
+                center: features[0].geometry.coordinates,
+                zoom: zoom + 0.5,
+                speed: 1.5,
+              })
+            })
         })
 
         map.on('click', function(e) {
@@ -153,9 +258,11 @@ export default {
 
           app.drawerTitle = feature.properties.title
           app.drawerDescription = feature.properties.description
-          app.drawerPlaceholder = feature.properties.thumbnail
+          app.drawerThumbnail = feature.properties.thumbnail
           app.drawerVideoID = feature.properties.videoID
           app.drawerOpen = true
+
+          console.log(app.drawerTitle)
 
           const offset = app.isMobile ? [0, -150] : [-150, 0]
 
@@ -188,14 +295,18 @@ export default {
   padding: 2rem;
   transform: translateY(100vh);
   transition: 300ms ease-in-out;
-  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
+.drawer a {
+  font-weight: 700;
+}
+
 .drawer--is-active {
   transform: translateY(55vh);
+  position: relative;
 }
 
 @media screen and (min-width: 900px) {
@@ -248,5 +359,95 @@ export default {
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+.intro {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background: #fff;
+  transition: all 300ms;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.intro video {
+  position: absolute;
+  height: 100%;
+  width: 177.77777778vh; /* 100 * 16 / 9 */
+  min-width: 100%;
+  min-height: 56.25vw; /* 100 * 9 / 16 */
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: none;
+}
+@media screen and (min-width: 900px) {
+  .intro video {
+    display: block;
+  }
+}
+
+.intro__container {
+  margin: auto;
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4rem 4rem;
+  text-align: center;
+}
+@media screen and (min-width: 900px) {
+  .intro__container {
+    padding: 4rem;
+    border: solid 2.5px #343434;
+  }
+}
+
+.intro--hidden {
+  opacity: 0;
+}
+
+.intro h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  border-bottom: solid 1px;
+  margin-bottom: 2rem;
+  background-color: #f1f1f1;
+  color: #343434;
+  border: solid 2.5px #343434;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 1.7rem;
+  display: inline-block;
+}
+
+.intro__description {
+  max-width: 500px;
+  text-align: left;
+}
+.intro__description p {
+  margin-bottom: 2rem;
+}
+
+.intro .btn {
+  cursor: pointer;
+  background: #343434;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-size: 0.75rem;
+  display: inline-block;
+  transition: all 400ms ease;
+}
+.intro .btn:hover {
+  box-shadow: 0 5px 10px rgba(50, 50, 50, 0.2);
 }
 </style>

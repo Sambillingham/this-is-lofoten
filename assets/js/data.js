@@ -1,9 +1,18 @@
 export const videoData = [
   {
+    coordinates: [14.71544, 68.243901],
+    title: '33333 Eagle Safari',
+    description:
+      'XXLofoten offers RIB tours from Svolvær. <br/><br/> There is a large population of Sea eagles in Raftsundet, and one of the highlights is without doubt when a sea eagle circle a few meters above your head. <br/><br/> This is the eagle with the largest wing span in the world, up to 2,65 meters. Our guides have a high awareness on safety, and will make sure that you have a comfortable experience. Therefore, this tour is a good option for the whole family. <br/> <a href="https://www.xxlofoten.no/zodiac-safari/">https://www.xxlofoten.no/zodiac-safari/</a>',
+    thumbnail: 'Eagle-safari-360-VR.png',
+    videoID: 'xtV0vW_e4wg',
+    categories: ['Austvågøy', 'Spring', 'Activites'],
+  },
+  {
     coordinates: [14.72544, 68.253901],
     title: 'Eagle Safari',
     description:
-      'XXLofoten offers RIB tours from Svolvær. <br/> There is a large population of Sea eagles in Raftsundet, and one of the highlights is without doubt when a sea eagle circle a few meters above your head. <br/> This is the eagle with the largest wing span in the world, up to 2,65 meters. Our guides have a high awareness on safety, and will make sure that you have a comfortable experience. Therefore, this tour is a good option for the whole family. <a href="https://www.xxlofoten.no/zodiac-safari/">https://www.xxlofoten.no/zodiac-safari/</a>',
+      'XXLofoten offers RIB tours from Svolvær. <br/><br/> There is a large population of Sea eagles in Raftsundet, and one of the highlights is without doubt when a sea eagle circle a few meters above your head. <br/><br/> This is the eagle with the largest wing span in the world, up to 2,65 meters. Our guides have a high awareness on safety, and will make sure that you have a comfortable experience. Therefore, this tour is a good option for the whole family. <br/> <a href="https://www.xxlofoten.no/zodiac-safari/">https://www.xxlofoten.no/zodiac-safari/</a>',
     thumbnail: 'Eagle-safari-360-VR.png',
     videoID: 'xtV0vW_e4wg',
     categories: ['Austvågøy', 'Spring', 'Activites'],
@@ -64,11 +73,11 @@ export const categories = [
   'Flakstadøy',
   'Moskenesøy',
   'Værøy',
+  'Røst',
   'Spring',
   'Summer',
   'Autumn',
   'Winter',
-  'Røst',
   'Relaxing',
   'Aerials',
   'Activites',
