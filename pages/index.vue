@@ -203,7 +203,7 @@ export default {
           paint: {
             'circle-color': '#000000',
             'circle-radius': 12,
-            'circle-translate': [0, 35],
+            'circle-translate': [0, 33],
           },
         })
 
@@ -215,7 +215,7 @@ export default {
           layout: {
             'text-field': '{point_count_abbreviated}',
             'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-            'text-size': 18,
+            'text-size': 17,
             'text-offset': [0, 2],
           },
           paint: {
@@ -305,7 +305,7 @@ export default {
 }
 
 .drawer--is-active {
-  transform: translateY(55vh);
+  transform: translateY(0);
   position: fixed;
 }
 
@@ -395,15 +395,14 @@ export default {
 }
 
 .intro__container {
-  margin: auto;
   position: relative;
   background: rgba(255, 255, 255, 0.9);
-  padding: 4rem 4rem;
+  padding: 4rem;
   text-align: center;
 }
 @media screen and (min-width: 900px) {
   .intro__container {
-    padding: 4rem;
+    margin: auto;
     border: solid 2.5px #343434;
   }
 }
@@ -424,7 +423,7 @@ export default {
   padding: 0.5rem 1.5rem;
   text-align: center;
   white-space: nowrap;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   display: inline-block;
 }
 
