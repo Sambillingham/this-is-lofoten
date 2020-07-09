@@ -301,7 +301,7 @@ export default {
 .map {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 54px);
 }
 
 .drawer {
@@ -328,6 +328,9 @@ export default {
 }
 
 @media screen and (min-width: 900px) {
+  .map {
+    height: 100%;
+  }
   .drawer {
     bottom: 0;
     right: 0;
@@ -443,7 +446,7 @@ export default {
 
 .contours-bg {
   position: absolute;
-  opacity: 0.32;
+  opacity: 0.2;
   top: 0;
   left: 0;
   max-width: 1800px;
@@ -465,6 +468,7 @@ export default {
   .contours-bg {
     max-width: 1000px;
     width: 1000px;
+    opacity: 0.27;
     transform: translate(-26px, -92px) rotate(175deg);
   }
 }
