@@ -6,7 +6,7 @@
       <span></span>
     </div>
     <div :class="{ 'nav-list--active': navIsOpen }" class="nav-list">
-      <header>
+      <header v-if="!isMobile">
         <h1><span class="l1">This is</span><span class="l2"> Lofoten</span></h1>
       </header>
       <nuxt-link to="/">
@@ -29,6 +29,10 @@
           {{ category.name }}
         </nuxt-link>
       </div>
+      <img
+        :src="require('~/assets/img/contours-nav.svg')"
+        class="contours-bg"
+      />
     </div>
   </div>
 </template>
@@ -42,10 +46,15 @@ export default {
   data() {
     return {
       navIsOpen: false,
+      windowWidth: window.innerWidth,
     }
   },
 
   computed: {
+    isMobile() {
+      return this.windowWidth <= 900
+    },
+
     isHomePage() {
       return this.$route.path === '/'
     },
@@ -59,10 +68,16 @@ export default {
       })
     },
   },
+
+  mounted() {
+    window.addEventListener('resize', () => {
+      return (this.windowWidth = window.innerWidth)
+    })
+  },
 }
 </script>
 
-<style>
+<style scoped>
 .nav-icon {
   position: absolute;
   top: 0;
@@ -97,24 +112,28 @@ export default {
   left: 0;
   z-index: 100;
   background: #fff;
-  width: 100%;
-  transform: translateY(-100%);
+  transform: translateX(-100%);
   transition: 200ms ease-in-out;
-  padding: 0 3.5rem;
+  padding: 1.5rem 3rem 0.5rem 2rem;
+  margin-top: 4.3rem;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 900px) {
   .nav-list {
+    margin-top: 0;
     width: 320px;
-    transform: translateY(0);
-    box-shadow: 0 3px 13px rgba(33, 33, 33, 0.1);
+    transform: translateX(0);
+    box-shadow: 0 3px 3px rgba(33, 33, 33, 0.1);
     padding: 0 3rem;
+    border-radius: 0;
   }
 }
 
 .nav-list--active {
-  transform: translateY(0);
-  box-shadow: 0 3px 3px rgba(33, 33, 33, 0.1);
+  transform: translateX(1rem);
+  box-shadow: 0 10px 10px rgba(33, 33, 33, 0.2);
 }
 
 .nav-list h1 {
@@ -152,15 +171,36 @@ export default {
   padding: 0.5rem 0.5rem 0.5rem 0;
   font-weight: 600;
   text-transform: uppercase;
-  /* font-size: 0.875rem; */
+  z-index: 1;
+  position: relative;
 }
 .categories {
   padding: 0 1rem 1rem;
+  z-index: 1;
+  position: relative;
 }
 
 .category {
   padding: 0.25rem;
   cursor: pointer;
   display: block;
+}
+
+.contours-bg {
+  position: absolute;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  max-width: 1802px;
+  width: 1861px;
+  transform: translate(-667px, 37px) rotate(304deg);
+  z-index: 0;
+}
+
+@media screen and (min-width: 900px) {
+  .contours-bg {
+    transform: translate(-651px, -130px) rotate(301deg);
+    opacity: 0.125;
+  }
 }
 </style>

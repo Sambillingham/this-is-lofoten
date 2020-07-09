@@ -34,10 +34,14 @@
         <span class="btn" @click="hideIntro()">
           Continue
         </span>
+        <img :src="require('~/assets/img/contours.svg')" class="contours-bg" />
       </div>
     </div>
 
     <Navbar />
+    <div v-if="isMobile" class="mobile-banner">
+      This Is Lofoten
+    </div>
     <div id="mapContainer" class="map"></div>
     <div :class="{ 'drawer--is-active': drawerOpen }" class="drawer fixed">
       <h2 class="mb-4 text-xl text-gray-900 leading-tight capitalize">
@@ -293,7 +297,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .map {
   position: fixed;
   width: 100%;
@@ -352,6 +356,18 @@ export default {
     transform: translateX(55vw);
   }
 } */
+
+.mobile-banner {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+  border-bottom: solid 1px;
+  font-size: 0.875rem;
+  background-color: #fafafa;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+}
 
 .close {
   position: absolute;
@@ -425,6 +441,17 @@ export default {
   transition: all 350ms ease-in-out;
 }
 
+.contours-bg {
+  position: absolute;
+  opacity: 0.32;
+  top: 0;
+  left: 0;
+  max-width: 1800px;
+  width: 1861px;
+  transform: translate(-752px, 0px) rotate(272deg);
+  z-index: 0;
+}
+
 @media screen and (min-width: 900px) {
   .intro__container {
     margin: auto;
@@ -432,6 +459,13 @@ export default {
     box-shadow: 0 5px 10px rgba(50, 50, 50, 0.2);
     border-radius: 4px;
     padding: 4rem;
+    overflow: hidden;
+  }
+
+  .contours-bg {
+    max-width: 1000px;
+    width: 1000px;
+    transform: translate(-26px, -92px) rotate(175deg);
   }
 }
 
@@ -502,6 +536,8 @@ export default {
   letter-spacing: 0.03rem;
   font-style: italic;
   font-size: 1.2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .intro .btn {
@@ -515,6 +551,8 @@ export default {
   display: inline-block;
   transition: all 400ms ease;
   border-radius: 4px;
+  position: relative;
+  z-index: 1;
 }
 .intro .btn:hover {
   background: #545454;
