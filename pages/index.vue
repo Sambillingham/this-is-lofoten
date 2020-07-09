@@ -48,7 +48,7 @@
         {{ drawerCoords }}
       </h3>
       <h2
-        class="mb-4 sm:text-lg md:text-2xl text-gray-900 leading-tight capitalize"
+        class="mb-4 xs:text-xl md:text-2xl text-gray-900 leading-tight capitalize"
       >
         {{ drawerTitle }}
       </h2>
@@ -57,6 +57,15 @@
         v-html="drawerDescription"
         class="mb-8 text-base text-gray-900 leading-normal"
       ></div>
+      <div class="mb-4">
+        <nuxt-link
+          class="mr-4 text-xs"
+          v-for="cat in drawerCategories"
+          :key="cat"
+          :to="`/category/${cat}`"
+          >#{{ cat }}</nuxt-link
+        >
+      </div>
       <a
         v-if="isMobile"
         :href="`https://www.youtube.com/watch?v=${drawerVideoID}`"
@@ -117,6 +126,7 @@ export default {
       windowWidth: window.innerWidth,
       initialLoad: true,
       animateOutIntro: false,
+      drawerCategories: [],
     }
   },
 
@@ -191,6 +201,7 @@ export default {
                   description: v.description,
                   videoID: v.videoID,
                   thumbnail: v.thumbnail,
+                  categories: v.categories,
                 },
               }
             }),
@@ -310,6 +321,8 @@ export default {
             5,
           )}° N  ${feature.geometry.coordinates[0].toFixed(5)}° W`
 
+          app.drawerCategories = JSON.parse(feature.properties.categories)
+
           const offset = app.isMobile ? [0, -150] : [-150, 0]
 
           map.flyTo({
@@ -336,7 +349,6 @@ export default {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 45vh;
   background: #fff;
   padding: 2rem;
   transform: translateY(100vh);

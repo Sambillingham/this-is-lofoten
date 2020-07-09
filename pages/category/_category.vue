@@ -6,7 +6,7 @@
       <div v-for="video in currentContent" :key="video" class="video">
         <a :href="`https://www.youtube.com/watch?v=${video.videoID}`">
           <img
-            v-if="isMobile"
+            v-if="isMobile && drawerThumbnail"
             :src="require(`~/assets/img/${video.thumbnail}`)"
           />
           <div v-else class="iframe-container">
