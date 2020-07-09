@@ -5,26 +5,33 @@
       class="intro"
       :class="{ 'intro--hidden': !initialLoad }"
     >
-      <video width="100%" height="100%" loop autoplay muted>
+      <video
+        width="100%"
+        height="100%"
+        loop
+        autoplay
+        muted
+        :class="{ 'video--hidden': animateOutIntro }"
+      >
         <source :src="require(`~/assets/video/bg.mp4`)" type="video/mp4" />
       </video>
-      <div class="intro__container">
-        <header><h1>This Is Lofoten</h1></header>
+      <div
+        class="intro__container"
+        :class="{ 'intro__container--hidden': animateOutIntro }"
+      >
+        <header><h1>Welcome To This Is Lofoten</h1></header>
         <div class="intro__description">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-            omnis illo sapiente ea in rem doloribus pariatur quibusdam, odit
-            suscipit consequuntur quo ducimus consequatur amet! Deleniti amet
-            possimus accusamus minus!
+            Immerse yourself in the beauty of the Lofoten Islands in 360°
+            virtual reality.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-            omnis illo sapiente ea in rem doloribus pariatur quibusdam, odit
-            suscipit consequuntur quo ducimus consequatur amet! Deleniti amet
-            possimus accusamus minus!
+            Discover the area through the map and choose your favourite place,
+            activity or season.
           </p>
+          <p class="hashtag">#dreamnowvisitlater</p>
         </div>
-        <span class="btn" @click="initialLoad = false">
+        <span class="btn" @click="hideIntro()">
           Continue
         </span>
       </div>
@@ -99,6 +106,7 @@ export default {
       drawerVideoID: '',
       windowWidth: window.innerWidth,
       initialLoad: true,
+      animateOutIntro: false,
     }
   },
 
@@ -113,12 +121,18 @@ export default {
       if (
         !document.cookie
           .split('; ')
-          .find((row) => row.startsWith('initialLoad'))
+          .find((row) => row.startsWith('initialLoadLPLPLPeee3'))
       ) {
         this.initialLoad = true
         document.cookie =
-          'initialLoad=true; expires=Fri, 31 Dec 9999 23:59:59 GMT'
+          'initialLoadLPLPLPeee3=true; expires=Fri, 31 Dec 9999 23:59:59 GMT'
       }
+    },
+    hideIntro() {
+      this.animateOutIntro = true
+      setTimeout(() => {
+        this.initialLoad = false
+      }, 500)
     },
   },
 
@@ -138,8 +152,8 @@ export default {
       center: [14.5682, 68.2343],
       zoom: 6.2,
       maxBounds: [
-        [11.8, 66.6],
-        [15.8, 69.5],
+        [11, 66.6],
+        [16, 69.5],
       ],
     })
 
@@ -387,24 +401,43 @@ export default {
   left: 0;
   z-index: 0;
   display: none;
+  object-fit: cover;
+  transition: opacity 450ms ease-in;
 }
+
+.video--hidden {
+  opacity: 0;
+}
+
 @media screen and (min-width: 900px) {
   .intro video {
     display: block;
+  }
+  .intro {
+    /* align-items: center; */
   }
 }
 
 .intro__container {
   position: relative;
   background: rgba(255, 255, 255, 0.9);
-  padding: 2rem 4rem;
   text-align: center;
+  transition: all 350ms ease-in-out;
 }
+
 @media screen and (min-width: 900px) {
   .intro__container {
     margin: auto;
-    border: solid 2.5px #343434;
+    border: solid 2px #e8e8e8;
+    box-shadow: 0 5px 10px rgba(50, 50, 50, 0.2);
+    border-radius: 4px;
+    padding: 4rem;
   }
+}
+
+.intro__container--hidden {
+  opacity: 0;
+  transform: translateY(15px);
 }
 
 .intro--hidden {
@@ -414,16 +447,15 @@ export default {
 .intro h1 {
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.11rem;
   border-bottom: solid 1px;
   margin-bottom: 2rem;
-  background-color: #f1f1f1;
   color: #343434;
-  border: solid 2.5px #343434;
-  padding: 0.5rem 1.5rem;
+  border-bottom: solid 2.5px #343434;
+  padding: 0.5rem 0;
   text-align: center;
   white-space: nowrap;
-  font-size: 1.6rem;
+  font-size: 1.1rem;
   display: inline-block;
 }
 
@@ -432,14 +464,44 @@ export default {
   margin: 0 auto;
   text-align: left;
 }
-@media screen and (min-width: 900px) {
-  .intro__description {
-    max-width: 500px;
-  }
-}
 
 .intro__description p {
   margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+@media screen and (min-width: 900px) {
+  .intro h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.18rem;
+    border-bottom: solid 1px;
+    margin-bottom: 2rem;
+    color: #343434;
+    border-bottom: solid 2.5px #343434;
+    padding: 0.5rem 0;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 1.6rem;
+    display: inline-block;
+  }
+
+  .intro__description {
+    max-width: 360px;
+  }
+
+  .intro__description p {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+  }
+}
+
+.intro__description p.hashtag {
+  font-weight: 700;
+  text-align: center;
+  text-align: center;
+  letter-spacing: 0.03rem;
+  font-style: italic;
+  font-size: 1.2rem;
 }
 
 .intro .btn {
@@ -452,8 +514,10 @@ export default {
   font-size: 0.75rem;
   display: inline-block;
   transition: all 400ms ease;
+  border-radius: 4px;
 }
 .intro .btn:hover {
+  background: #545454;
   box-shadow: 0 5px 10px rgba(50, 50, 50, 0.2);
 }
 </style>
