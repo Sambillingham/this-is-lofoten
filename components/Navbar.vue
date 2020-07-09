@@ -12,10 +12,10 @@
       <nuxt-link to="/">
         <h2>Map</h2>
       </nuxt-link>
-      <nuxt-link to="/">
+      <nuxt-link to="/about">
         <h2>About</h2>
       </nuxt-link>
-      <nuxt-link to="/">
+      <nuxt-link to="/contact">
         <h2>Contact</h2>
       </nuxt-link>
       <h2>Categories</h2>
