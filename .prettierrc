@@ -3,4 +3,5 @@
   "arrowParens": "always",
   "singleQuote": true,
   "trailingComma": "all",
+  "quoteProps": "preserve",
 }
