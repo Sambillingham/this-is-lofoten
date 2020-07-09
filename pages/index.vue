@@ -195,6 +195,21 @@ export default {
         })
 
         map.addLayer({
+          id: 'point-labels',
+          type: 'symbol',
+          source: 'point',
+          minzoom: 9,
+          maxzoom: 22,
+          layout: {
+            'text-field': ['get', 'title'],
+            'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+            'text-size': 15,
+            'text-offset': [0, 3],
+            'text-allow-overlap': true,
+          },
+        })
+
+        map.addLayer({
           id: 'points',
           type: 'symbol',
           source: 'point',
