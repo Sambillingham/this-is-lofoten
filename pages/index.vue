@@ -334,7 +334,7 @@ export default {
 
           app.drawerCategories = JSON.parse(feature.properties.categories)
 
-          const offset = app.isMobile ? [0, -150] : [-150, 0]
+          const offset = app.isMobile ? [0, -175] : [-150, 0]
 
           map.flyTo({
             center: feature.geometry.coordinates,
