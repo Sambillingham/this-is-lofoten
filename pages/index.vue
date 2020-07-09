@@ -194,6 +194,12 @@ export default {
           clusterRadius: 10, // Radius of each cluster when clustering points (defaults to 50)
         })
 
+        // disable map rotation using right click + drag
+        map.dragRotate.disable()
+
+        // disable map rotation using touch rotation gesture
+        map.touchZoomRotate.disableRotation()
+
         map.addLayer({
           id: 'point-labels',
           type: 'symbol',
