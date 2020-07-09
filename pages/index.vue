@@ -198,6 +198,7 @@ export default {
                 },
                 properties: {
                   title: v.title,
+                  short_title: v.short_title,
                   description: v.description,
                   videoID: v.videoID,
                   thumbnail: v.thumbnail,
@@ -208,7 +209,7 @@ export default {
           },
           cluster: true,
           clusterMaxZoom: 14, // Max zoom to cluster points on
-          clusterRadius: 10, // Radius of each cluster when clustering points (defaults to 50)
+          clusterRadius: 11, // Radius of each cluster when clustering points (defaults to 50)
         })
 
         // disable map rotation using right click + drag
@@ -224,11 +225,17 @@ export default {
           minzoom: 9,
           maxzoom: 22,
           layout: {
-            'text-field': ['get', 'title'],
+            'text-field': ['get', 'short_title'],
             'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
             'text-size': 15,
-            'text-offset': [0, 3],
+            'text-offset': [0, 2.5],
             'text-allow-overlap': true,
+          },
+          paint: {
+            'text-color': '#333333',
+            'text-halo-color': 'white',
+            'text-halo-blur': 3,
+            'text-halo-width': 1,
           },
         })
 
