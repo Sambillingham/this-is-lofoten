@@ -44,7 +44,12 @@
     </div>
     <div id="mapContainer" class="map"></div>
     <div :class="{ 'drawer--is-active': drawerOpen }" class="drawer fixed">
-      <h2 class="mb-4 text-xl text-gray-900 leading-tight capitalize">
+      <h3 class="mb-1 text-xs text-gray-600 leading-tight capitalize">
+        {{ drawerCoords }}
+      </h3>
+      <h2
+        class="mb-4 sm:text-lg md:text-2xl text-gray-900 leading-tight capitalize"
+      >
         {{ drawerTitle }}
       </h2>
       <div
@@ -108,6 +113,7 @@ export default {
       drawerDescription: '',
       drawerThumbnail: '',
       drawerVideoID: '',
+      drawerCoords: '',
       windowWidth: window.innerWidth,
       initialLoad: true,
       animateOutIntro: false,
@@ -300,8 +306,9 @@ export default {
           app.drawerThumbnail = feature.properties.thumbnail
           app.drawerVideoID = feature.properties.videoID
           app.drawerOpen = true
-
-          console.log(app.drawerTitle)
+          app.drawerCoords = `${feature.geometry.coordinates[1].toFixed(
+            5,
+          )}° N  ${feature.geometry.coordinates[0].toFixed(5)}° W`
 
           const offset = app.isMobile ? [0, -150] : [-150, 0]
 
