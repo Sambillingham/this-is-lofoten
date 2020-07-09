@@ -377,6 +377,7 @@ export default {
 .drawer--is-active {
   transform: translateY(0);
   position: fixed;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.15);
 }
 
 @media screen and (min-width: 900px) {
@@ -394,6 +395,7 @@ export default {
 
   .drawer--is-active {
     transform: translateX(55vw);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   }
 }
 
