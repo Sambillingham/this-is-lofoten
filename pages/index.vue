@@ -96,6 +96,10 @@
       <span @click="drawerOpen = false" class="close cursor-pointer"
         >&times;</span
       >
+      <img
+        :src="require('~/assets/img/contours-drawer.svg')"
+        class="contours-bg-drawer"
+      />
     </div>
   </div>
 </template>
@@ -363,6 +367,7 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .drawer a {
@@ -390,6 +395,11 @@ export default {
   .drawer--is-active {
     transform: translateX(55vw);
   }
+}
+
+.drawer a {
+  position: relative;
+  z-index: 1;
 }
 
 /* @media (orientation: landscape) {
@@ -425,11 +435,13 @@ export default {
   font-size: 1.8rem;
   top: 0;
   right: 0;
+  z-index: 1;
 }
 .iframe-container {
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
+  z-index: 1;
 }
 
 .iframe-container iframe {
@@ -517,6 +529,30 @@ export default {
     width: 1000px;
     opacity: 0.27;
     transform: translate(-26px, -92px) rotate(175deg);
+  }
+}
+
+.contours-bg-drawer {
+  position: absolute;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  max-width: 1800px;
+  width: 1861px;
+  transform: translate(-752px, 0px) rotate(272deg);
+  z-index: 0;
+}
+
+@media screen and (min-width: 900px) {
+  .contours-bg-drawer {
+    position: absolute;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    max-width: 1400px;
+    width: 1400px;
+    transform: translate(-352px, 300px) rotate(-15deg);
+    z-index: 0;
   }
 }
 
