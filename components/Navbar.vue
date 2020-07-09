@@ -107,7 +107,7 @@ export default {
 }
 
 .nav-list {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
@@ -123,10 +123,10 @@ export default {
 @media screen and (min-width: 900px) {
   .nav-list {
     margin-top: 0;
-    width: 320px;
+    width: 290px;
     transform: translateX(0);
     box-shadow: 0 3px 3px rgba(33, 33, 33, 0.1);
-    padding: 0 3rem;
+    padding: 0 0 0 2rem;
     border-radius: 0;
   }
 }
@@ -151,6 +151,7 @@ export default {
   text-align: center;
   white-space: nowrap;
   font-size: 1.1rem;
+  display: inline-block;
 }
 .l1 {
   letter-spacing: 0.22rem;
@@ -181,7 +182,7 @@ export default {
 }
 
 .category {
-  padding: 0.25rem;
+  padding: 0.2rem 0;
   cursor: pointer;
   display: block;
 }

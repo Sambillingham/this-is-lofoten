@@ -70,10 +70,10 @@ export default {
 
 @media screen and (min-width: 900px) {
   .content-title {
-    padding-left: 360px;
+    padding-left: 330px;
   }
   .content {
-    padding-left: 360px;
+    padding-left: 330px;
   }
 }
 
