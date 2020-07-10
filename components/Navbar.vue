@@ -169,11 +169,16 @@ export default {
 .nav-list h2 {
   font-weight: 500;
   letter-spacing: 0.05rem;
-  padding: 0.5rem 0.5rem 0.5rem 0;
+  padding: 0.25rem 0.5rem 0.25rem 0;
   font-weight: 600;
   text-transform: uppercase;
   z-index: 1;
   position: relative;
+}
+@media screen and (min-width: 900px) {
+  .nav-list h2 {
+    padding: 0.5rem 0.5rem 0.5rem 0;
+  }
 }
 .categories {
   padding: 0 1rem 1rem;
@@ -182,7 +187,7 @@ export default {
 }
 
 .category {
-  padding: 0.2rem 0;
+  padding: 0.18rem 0;
   cursor: pointer;
   display: block;
 }

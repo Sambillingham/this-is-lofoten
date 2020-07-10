@@ -58,6 +58,7 @@ export default {
 
 .content a {
   font-weight: 700;
+  font-size: 0.875rem;
 }
 
 h2 {
@@ -82,6 +83,9 @@ h2 {
     padding-left: 330px;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+  .content a {
+    font-size: 1.1rem;
   }
 }
 </style>
