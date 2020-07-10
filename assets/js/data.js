@@ -114,7 +114,7 @@ export const videoData = [
     title: 'Road to Nusfjord',
     short_title: 'Road to Nusfjord',
     description: '',
-    thumbnail: '',
+    thumbnail: 'Look around on this popular photo spot. Looking up at Stjerntinden.',
     videoID: 'uajMZaVYDAg',
     categories: ['Flakstadøy', 'Winter', 'Relaxing'],
   },
@@ -123,7 +123,7 @@ export const videoData = [
     title: 'Storvatnet, Stjerntind',
     short_title: 'Storvatnet',
     description:
-      'Look around on this popular photo spot. Looking up at Stjerntinden.',
+      'Look around on this popular photo spot. Looking down at Storvatnet and up at Stjerntinden.',
     thumbnail: '',
     videoID: 'c2nU_Cr03Dg',
     categories: ['Flakstadøy', 'Winter', 'Relaxing'],
