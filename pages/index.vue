@@ -300,6 +300,8 @@ export default {
           })
           const clusterId = features[0].properties.cluster_id
 
+          const offset = app.isMobile ? [0, -75] : [-50, 0]
+
           map
             .getSource('point')
             .getClusterExpansionZoom(clusterId, function(err, zoom) {
@@ -308,20 +310,36 @@ export default {
                 center: features[0].geometry.coordinates,
                 zoom: zoom + 0.5,
                 speed: 1.5,
+                offset: [...offset],
               })
             })
         })
 
-        map.on('click', function(e) {
+        map.on('click', 'points', function(e) {
           const features = map.queryRenderedFeatures(e.point, {
-            layers: ['points'], // replace this with the name of the layer
+            layers: ['points'],
           })
 
           if (!features.length) {
             return
           }
-
           const feature = features[0]
+
+          if (feature.properties.point_count > 1) {
+            return map
+              .getSource('point')
+              .getClusterExpansionZoom(feature.properties.cluster_id, function(
+                err,
+                zoom,
+              ) {
+                if (err) return
+                map.easeTo({
+                  center: features[0].geometry.coordinates,
+                  zoom: zoom + 0.5,
+                  speed: 1.5,
+                })
+              })
+          }
 
           app.drawerTitle = feature.properties.title
           app.drawerDescription = feature.properties.description
