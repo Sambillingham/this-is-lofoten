@@ -65,7 +65,7 @@ export const videoData = [
     short_title: 'Skrova Aerial',
     description:
       'See the Skrova Island from above. Skrova is a small island group and village area in Vågan. The 2.5-square-kilometre Skrova island group in the Lofoten archipelago, it is located in the Vestfjorden, south of the islands of Austvågøya, Lillemolla, and Stormolla. The largest island in the group is Storskrova and the island of Heimskrova is where most of the population is located. The six main inhabited islands in the group are all interconnected by a small bridge and several man-made causeways.',
-    thumbnail: '',
+    thumbnail: 'Torvdalen.png',
     videoID: 'kBVvGXquN5o',
     categories: ['Austvågøy', 'Spring', 'Aerials'],
   },
@@ -75,7 +75,7 @@ export const videoData = [
     short_title: 'Torvdalen viewpoint',
     description:
       'Enjoy this popular viewpoint from the air. Here you can see Himmeltinden behind Borge in the front and Eggum to the right.',
-    thumbnail: '',
+    thumbnail: 'Torvdalen.png',
     videoID: 'CfyMVOzK9aU',
     categories: ['Vestvågøy', 'Spring', 'Aerials'],
   },
@@ -105,7 +105,7 @@ export const videoData = [
     short_title: 'Ballstad',
     description:
       'See Ballstad in Lofotenfrom above! This is from the spring, when all the cod is being dried on the racks in almost all the towns in Lofoten.',
-    thumbnail: '',
+    thumbnail: 'Ballstad.png',
     videoID: 'QtgAM7cpaeM',
     categories: ['Vestvågøy', 'Spring', 'Aerials'],
   },
@@ -113,8 +113,9 @@ export const videoData = [
     coordinates: [13.322389, 68.061816],
     title: 'Road to Nusfjord',
     short_title: 'Road to Nusfjord',
-    description: '',
-    thumbnail: 'Look around on this popular photo spot. Looking up at Stjerntinden.',
+    description:
+      'Look around on this popular photo spot. Looking up at Stjerntinden.',
+    thumbnail: 'RoadNusfjord.png',
     videoID: 'uajMZaVYDAg',
     categories: ['Flakstadøy', 'Winter', 'Relaxing'],
   },
@@ -124,9 +125,28 @@ export const videoData = [
     short_title: 'Storvatnet',
     description:
       'Look around on this popular photo spot. Looking down at Storvatnet and up at Stjerntinden.',
-    thumbnail: '',
+    thumbnail: 'storvatnet.png',
     videoID: 'c2nU_Cr03Dg',
     categories: ['Flakstadøy', 'Winter', 'Relaxing'],
+  },
+  {
+    coordinates: [14.965117, 68.363949],
+    title: 'Trollfjorden with BRIM EXPLORER',
+    short_title: 'BRIM EXPLORER	Trollfjor d',
+    description:
+      '<p>Experience the famous Trollfjord! You will be rewarded with breathtaking & magnificent views of steep mountains dropping straight into the fjord. The 2-kilometre (1.2 mi) long fjord cuts into the island of Austvågøya and flows out into the Raftsundet strait. The fjord has a narrow entrance and steep-sided mountains surrounding it. The name is derived from troll, a figure from Norse mythology.</p><br /> <p>Enjoy this magic hybrid electric cruise with BRIM EXPLORER: <a href="https://brimexplorer.com/tours/silent"> https://brimexplorer.com/tours/silent.</a> </p>',
+    thumbnail: 'trollfjorden.jpg',
+    videoID: 'zZHoOmhafRA',
+    categories: ['Austvågøy', 'Summer', 'Activites', 'Aerials'],
+  },
+  {
+    coordinates: [14.200956, 68.300881],
+    title: 'Paragliding Gimsøy',
+    short_title: 'Paragliding Gimsøy',
+    description: 'Fly out off the Storknubben mountain in a paraglider!',
+    thumbnail: 'paragliding-gimsøy.jpg',
+    videoID: 'yEZxd_Az8Oo',
+    categories: ['Austvågøy', 'Summer', 'Activites', 'Aerials'],
   },
 ]
 
