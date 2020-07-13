@@ -7,7 +7,7 @@ export const videoData = [
       'Relax with this beautiful winter landscape from Småtindan, Kabelvåg, Lofoten.',
     thumbnail: 'Smatindan-360-VR.png',
     videoID: 'V4TEhrYG168',
-    categories: ['Austvågøy', 'Relaxing', 'Winter'],
+    categories: ['Vågan', 'Relaxing', 'Winter'],
   },
   {
     coordinates: [14.5875426, 68.2462474],
@@ -17,7 +17,7 @@ export const videoData = [
       'Experience how it is to stand on top of the Svolvær goat in this 360 VR video! Warning!!! Not for people with fear of heights!!!',
     thumbnail: 'Svolværgeita-360-VR.png',
     videoID: 'cFvkC9WzMtI',
-    categories: ['Austvågøy', 'Summer', 'Activites'],
+    categories: ['Vågan', 'Summer', 'Activites'],
   },
   {
     coordinates: [14.509083, 68.246917],
@@ -27,7 +27,7 @@ export const videoData = [
       'Fly over the amazing Kongstind Mountain, 552 meters above sea level. Looking down at Svolvær.',
     thumbnail: 'Kongstind-360-VR.png',
     videoID: 'jXKmHpAQMdM',
-    categories: ['Austvågøy', 'Winter', 'Aerials'],
+    categories: ['Vågan', 'Winter', 'Aerials'],
   },
   {
     coordinates: [13.571389, 68.216639],
@@ -37,7 +37,7 @@ export const videoData = [
       'See the amazing view from Himmeltinden, Vestvågøy. Looking down at Uttakleiv and the famous Haukland beach. This is springtime in Lofoten, with two different seasons at the same time! Winter in the mountains and (almost) summer at sea level.',
     thumbnail: 'Himmeltind-360-VR.png',
     videoID: 'dBWjef-2nn8',
-    categories: ['Vestvågøya', 'Winter', 'Aerials'],
+    categories: ['Vestvågøy', 'Winter', 'Aerials'],
   },
   {
     coordinates: [14.668222, 68.242111],
@@ -47,7 +47,7 @@ export const videoData = [
       'Join us on a flight over Lofoten! We are flying a Cessna F172P from Svolvær Airport, Helle. Thanks to pilot Alexander Jansen, and Lofoten Flyklubb for this amazing experience!',
     thumbnail: 'Cessna-flight-over-Lofoten-360-VR.png',
     videoID: 'eDx-F-RBdc8',
-    categories: ['Vestvågøya', 'Spring', 'Aerials'],
+    categories: ['Vestvågøy', 'Spring', 'Aerials'],
   },
   {
     coordinates: [13.077222, 67.927],
@@ -57,7 +57,7 @@ export const videoData = [
       'Enjoy this famous view from Reinebringen in June, when the sun never goes down. Looking down at Reine, Sakrisøy, Hamnøy and into Bunesfjorden and Kjerkfjorden (videos from these places are coming to the plattform soon). Check out www.catogarden.no for a unique place to stay and activities from the area.',
     thumbnail: 'Reinebringen-360-VR.png',
     videoID: 'SMU8ObOUw0k',
-    categories: ['Moskenesøy', 'Summer', 'Aerials'],
+    categories: ['Moskenes', 'Summer', 'Aerials'],
     oculus:
       'https://www.oculus.com/experiences/media/291491408930952/3499066823459640/',
   },
@@ -66,10 +66,10 @@ export const videoData = [
     title: 'Fly above Skrova Island in Lofoten',
     short_title: 'Skrova Aerial',
     description:
-      'See the Skrova Island from above. Skrova is a small island group and village area in Vågan. The 2.5-square-kilometre Skrova island group in the Lofoten archipelago, it is located in the Vestfjorden, south of the islands of Austvågøya, Lillemolla, and Stormolla. The largest island in the group is Storskrova and the island of Heimskrova is where most of the population is located. The six main inhabited islands in the group are all interconnected by a small bridge and several man-made causeways.',
+      'See the Skrova Island from above. Skrova is a small island group and village area in Vågan. The 2.5-square-kilometre Skrova island group in the Lofoten archipelago, it is located in the Vestfjorden, south of the islands of Vågana, Lillemolla, and Stormolla. The largest island in the group is Storskrova and the island of Heimskrova is where most of the population is located. The six main inhabited islands in the group are all interconnected by a small bridge and several man-made causeways.',
     thumbnail: 'Torvdalen.png',
     videoID: 'kBVvGXquN5o',
-    categories: ['Austvågøy', 'Spring', 'Aerials'],
+    categories: ['Vågan', 'Spring', 'Aerials'],
   },
   {
     coordinates: [13.828243, 68.265741],
@@ -86,10 +86,10 @@ export const videoData = [
     title: 'Eagle Safari - Risvær',
     short_title: 'Eagle Safari',
     description:
-      'XXLofoten offers RIB tours from Svolvær. <br/><br/> There is a large population of Sea eagles in Raftsundet, and one of the highlights is without doubt when a sea eagle circle a few meters above your head. <br/><br/> This is the eagle with the largest wing span in the world, up to 2,65 meters. Our guides have a high awareness on safety, and will make sure that you have a comfortable experience. Therefore, this tour is a good option for the whole family. <br/> <a href="https://www.xxlofoten.no/zodiac-safari/">https://www.xxlofoten.no/zodiac-safari/</a>',
+      'XXLofoten offers RIB tours from Svolvær. <br/><br/> There is a large population of Sea eagles in Raftsundet, and one of the highlights is without doubt when a sea eagle circle a few meters above your head. <br/><br/> This is the eagle with the largest wing span in the world, up to 2,65 meters. Our guides have a high awareness on safety, and will make sure that you have a comfortable experience. Therefore, this tour is a good option for the whole family. <br/> <a target="_blank" href="https://www.xxlofoten.no/zodiac-safari/">https://www.xxlofoten.no/zodiac-safari/</a>',
     thumbnail: 'Eagle-safari-360-VR.png',
     videoID: 'xtV0vW_e4wg',
-    categories: ['Austvågøy', 'Spring', 'Activites'],
+    categories: ['Vågan', 'Spring', 'Activites'],
   },
   {
     coordinates: [14.681032, 68.323608],
@@ -99,7 +99,7 @@ export const videoData = [
       'Enjoy this flight over the calm waters in Vestpollen with beautiful evening light.',
     thumbnail: '',
     videoID: 'zJaMeS1Lt5Y',
-    categories: ['Austvågøy', 'Spring', 'Aerials'],
+    categories: ['Vågan', 'Spring', 'Aerials'],
   },
   {
     coordinates: [13.54661, 68.082691],
@@ -136,10 +136,10 @@ export const videoData = [
     title: 'Trollfjorden with BRIM EXPLORER',
     short_title: 'BRIM EXPLORER	Trollfjord',
     description:
-      '<p>Experience the famous Trollfjord! You will be rewarded with breathtaking & magnificent views of steep mountains dropping straight into the fjord. The 2-kilometre (1.2 mi) long fjord cuts into the island of Austvågøya and flows out into the Raftsundet strait. The fjord has a narrow entrance and steep-sided mountains surrounding it. The name is derived from troll, a figure from Norse mythology.</p><br /> <p>Enjoy this magic hybrid electric cruise with BRIM EXPLORER: <a href="https://brimexplorer.com/tours/silent"> https://brimexplorer.com/tours/silent.</a> </p>',
+      '<p>Experience the famous Trollfjord! You will be rewarded with breathtaking & magnificent views of steep mountains dropping straight into the fjord. The 2-kilometre (1.2 mi) long fjord cuts into the island of Vågana and flows out into the Raftsundet strait. The fjord has a narrow entrance and steep-sided mountains surrounding it. The name is derived from troll, a figure from Norse mythology.</p><br /> <p>Enjoy this magic hybrid electric cruise with BRIM EXPLORER: <a target="_blank" href="https://brimexplorer.com/tours/silent"> https://brimexplorer.com/tours/silent.</a> </p>',
     thumbnail: 'trollfjorden.jpg',
     videoID: 'zZHoOmhafRA',
-    categories: ['Austvågøy', 'Summer', 'Activites', 'Aerials'],
+    categories: ['Vågan', 'Summer', 'Activites', 'Aerials'],
   },
   {
     coordinates: [14.200956, 68.300881],
@@ -148,15 +148,15 @@ export const videoData = [
     description: 'Fly out off the Storknubben mountain in a paraglider!',
     thumbnail: 'paragliding-gimsøy.jpg',
     videoID: 'yEZxd_Az8Oo',
-    categories: ['Austvågøy', 'Summer', 'Activites', 'Aerials'],
+    categories: ['Vågan', 'Summer', 'Activites', 'Aerials'],
   },
 ]
 
 export const categories = [
-  'Austvågøy',
-  'Vestvågøya',
+  'Vågan',
+  'Vestvågøy',
   'Flakstadøy',
-  'Moskenesøy',
+  'Moskenes',
   'Værøy',
   'Røst',
   'Spring',

@@ -87,6 +87,7 @@
         ></iframe>
       </div>
       <a
+        target="_blank"
         v-if="drawerOculusLink"
         class="w-50 block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded text-center mb-2"
         :href="drawerOculusLink"

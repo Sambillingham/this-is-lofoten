@@ -11,16 +11,33 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content:
+          process.env.npm_package_description ||
+          ' Immerse yourself in the beauty of the Lofoten Islands in 360° virtual reality. Discover the area through the map and choose your favourite place, activity or season.',
+      },
+      {
+        name: 'og:url',
+        content: `https://thisislofoten.com`,
+      },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:title', content: 'This is Lofoten' },
+      {
+        name: 'og:description',
+        content:
+          'Immerse yourself in the beauty of the Lofoten Islands in 360° virtual reality. Discover the area through the map and choose your favourite place, activity or season.',
+      },
+      {
+        name: 'og:image',
+        content: 'https://thisislofoten.com/assets/img/social.jpg',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
         href: 'https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css'
-      }
-    ]
+      },
+    ],
   },
   /*
    ** Customize the progress-bar color
