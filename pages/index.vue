@@ -55,7 +55,7 @@
       <div
         v-if="!isMobile"
         v-html="drawerDescription"
-        class="mb-8 text-base text-gray-900 leading-normal"
+        class="mb-8 text-base text-gray-900 leading-normal relative z-10"
       ></div>
       <div class="mb-4">
         <nuxt-link
@@ -153,11 +153,11 @@ export default {
       if (
         !document.cookie
           .split('; ')
-          .find((row) => row.startsWith('initialLoadLPLPLPeee3'))
+          .find((row) => row.startsWith('initialLoad'))
       ) {
         this.initialLoad = true
         document.cookie =
-          'initialLoadLPLPLPeee3=true; expires=Fri, 31 Dec 9999 23:59:59 GMT'
+          'initialLoad=true; expires=Fri, 31 Dec 9999 23:59:59 GMT'
       }
     },
     hideIntro() {
@@ -430,6 +430,7 @@ export default {
 .drawer a {
   position: relative;
   z-index: 1;
+  font-weight: 700;
 }
 
 /* @media (orientation: landscape) {

@@ -86,7 +86,7 @@ export const videoData = [
     title: 'Eagle Safari - Risvær',
     short_title: 'Eagle Safari',
     description:
-      'XXLofoten offers RIB tours from Svolvær. <br/><br/> There is a large population of Sea eagles in Raftsundet, and one of the highlights is without doubt when a sea eagle circle a few meters above your head. <br/><br/> This is the eagle with the largest wing span in the world, up to 2,65 meters. Our guides have a high awareness on safety, and will make sure that you have a comfortable experience. Therefore, this tour is a good option for the whole family. <br/> <a target="_blank" href="https://www.xxlofoten.no/zodiac-safari/">https://www.xxlofoten.no/zodiac-safari/</a>',
+      'XXLofoten offers RIB tours from Svolvær. <br/><br/> There is a large population of Sea eagles in Raftsundet, and one of the highlights is without doubt when a sea eagle circle a few meters above your head. <br/><br/> This is the eagle with the largest wing span in the world, up to 2,65 meters. Our guides have a high awareness on safety, and will make sure that you have a comfortable experience. Therefore, this tour is a good option for the whole family. <br/> <a class="font-bold" target="_blank" href="https://www.xxlofoten.no/zodiac-safari/">https://www.xxlofoten.no/zodiac-safari/</a>',
     thumbnail: 'Eagle-safari-360-VR.png',
     videoID: 'xtV0vW_e4wg',
     categories: ['Vågan', 'Spring', 'Activites'],
@@ -136,7 +136,7 @@ export const videoData = [
     title: 'Trollfjorden with BRIM EXPLORER',
     short_title: 'BRIM EXPLORER	Trollfjord',
     description:
-      '<p>Experience the famous Trollfjord! You will be rewarded with breathtaking & magnificent views of steep mountains dropping straight into the fjord. The 2-kilometre (1.2 mi) long fjord cuts into the island of Vågana and flows out into the Raftsundet strait. The fjord has a narrow entrance and steep-sided mountains surrounding it. The name is derived from troll, a figure from Norse mythology.</p><br /> <p>Enjoy this magic hybrid electric cruise with BRIM EXPLORER: <a target="_blank" href="https://brimexplorer.com/tours/silent"> https://brimexplorer.com/tours/silent.</a> </p>',
+      '<p>Experience the famous Trollfjord! You will be rewarded with breathtaking & magnificent views of steep mountains dropping straight into the fjord. The 2-kilometre (1.2 mi) long fjord cuts into the island of Vågana and flows out into the Raftsundet strait. The fjord has a narrow entrance and steep-sided mountains surrounding it. The name is derived from troll, a figure from Norse mythology.</p><br /> <p>Enjoy this magic hybrid electric cruise with BRIM EXPLORER: <a class="font-bold" target="_blank" href="https://brimexplorer.com/tours/silent"> https://brimexplorer.com/tours/silent.</a> </p>',
     thumbnail: 'trollfjorden.jpg',
     videoID: 'zZHoOmhafRA',
     categories: ['Vågan', 'Summer', 'Activites', 'Aerials'],
