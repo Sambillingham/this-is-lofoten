@@ -76,17 +76,23 @@
           class="mb-4"
         />
       </a>
-      <div v-if="!isMobile" class="iframe-container">
+      <div v-if="!isMobile" class="iframe-container mb-4">
         <iframe
           :src="`https://www.youtube.com/embed/${drawerVideoID}`"
           width="100%"
           height="400px"
-          class="mb-4"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
       </div>
+      <a
+        v-if="drawerOculusLink"
+        class="w-50 block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded text-center mb-2"
+        :href="drawerOculusLink"
+      >
+        Save To Oculus
+      </a>
       <a
         v-if="isMobile"
         :href="`https://www.youtube.com/watch?v=${drawerVideoID}`"
@@ -131,6 +137,7 @@ export default {
       initialLoad: true,
       animateOutIntro: false,
       drawerCategories: [],
+      drawerOculusLink: '',
     }
   },
 
@@ -207,6 +214,7 @@ export default {
                   videoID: v.videoID,
                   thumbnail: v.thumbnail,
                   categories: v.categories,
+                  oculus: v.oculus,
                 },
               }
             }),
@@ -351,6 +359,7 @@ export default {
           )}° N  ${feature.geometry.coordinates[0].toFixed(5)}° W`
 
           app.drawerCategories = JSON.parse(feature.properties.categories)
+          app.drawerOculusLink = feature.properties.oculus || ''
 
           const offset = app.isMobile ? [0, -175] : [-150, 0]
 
@@ -628,6 +637,7 @@ export default {
 
   .intro__description {
     max-width: 360px;
+    text-align: center;
   }
 
   .intro__description p {
