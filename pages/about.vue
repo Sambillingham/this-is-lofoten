@@ -15,7 +15,10 @@
         place or feeling you are looking for. Everything is uploaded on youtube,
         and you can find the playlists there as well.
       </p>
-      <p>At least in real life. So let’s make reality virtual!</p>
+      <p>
+        We are constantly uploading new videos, from new places and new
+        activities!
+      </p>
       <p>
         By using the map, you can now experience the Lofoten Islands in 360° VR.
         Choose the location or feeling you want.
@@ -24,10 +27,23 @@
       <p class="hashtag">Dream now - visit later.</p>
 
       <p>
-        This is Lofoten works on all platforms, but we recommend using Chrome
-        (link) on computers to get 8K full resolution, and the youtube app
-        (link) on your smartphone. So far the playlists on Youtube would work
-        best if you are on Oculus VR headset. Everything is uploaded on youtube,
+        This is Lofoten works on all platforms, but we recommend using
+        <a target="_blank" href="https://www.google.com/chrome/">Chrome</a>
+        on computers to get 8K full resolution, and the youtube app via
+        <a
+          target="_blank"
+          href="https://play.google.com/store/apps/details?id=com.google.android.youtube&hl=en"
+        >
+          Google Play (Android)</a
+        >
+        or
+        <a
+          target="_blank"
+          href="https://apps.apple.com/us/app/youtube-watch-listen-stream/id544007664"
+          >App Store (iOS)</a
+        >
+        on your smartphone. So far the playlists on Youtube would work best if
+        you are on Oculus VR headset. Everything is uploaded on youtube, and you
         and you can find the playlists there as well.
       </p>
     </div>
@@ -73,6 +89,9 @@ h2 {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 
+a {
+  font-weight: 700;
+}
 @media screen and (min-width: 900px) {
   .content-title {
     padding-left: 330px;
