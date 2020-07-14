@@ -28,7 +28,7 @@ export default {
       },
       {
         name: 'og:image',
-        content: 'https://thisislofoten.com/assets/img/social.jpg',
+        content: 'https://thisislofoten.com/social.jpg',
       },
     ],
     link: [
