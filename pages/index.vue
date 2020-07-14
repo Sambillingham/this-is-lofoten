@@ -44,65 +44,66 @@
     </div>
     <div id="mapContainer" class="map"></div>
     <div :class="{ 'drawer--is-active': drawerOpen }" class="drawer fixed">
-      <h3 class="mb-1 text-xs text-gray-600 leading-tight capitalize">
-        {{ drawerCoords }}
-      </h3>
-      <h2
-        class="mb-4 xs:text-xl md:text-2xl text-gray-900 leading-tight capitalize"
-      >
-        {{ drawerTitle }}
-      </h2>
-      <div
-        v-if="!isMobile"
-        v-html="drawerDescription"
-        class="mb-8 text-base text-gray-900 leading-normal relative z-10"
-      ></div>
-      <div class="mb-4">
-        <nuxt-link
-          class="mr-4 text-xs"
-          v-for="cat in drawerCategories"
-          :key="cat"
-          :to="`/category/${cat}`"
-          >#{{ cat }}</nuxt-link
+      <div class="contours-container">
+        <h3 class="mb-1 text-xs text-gray-600 leading-tight capitalize">
+          {{ drawerCoords }}
+        </h3>
+        <h2
+          class="mb-4 xs:text-xl xs:font-bold sm:font-bold md:text-2xl text-gray-900 leading-tight capitalize"
+        >
+          {{ drawerTitle }}
+        </h2>
+        <div
+          v-html="drawerDescription"
+          class="mb-8 text-base text-gray-900 leading-normal relative z-10"
+        ></div>
+        <div class="mb-4">
+          <nuxt-link
+            class="mr-4 text-xs"
+            v-for="cat in drawerCategories"
+            :key="cat"
+            :to="`/category/${cat}`"
+            >#{{ cat }}</nuxt-link
+          >
+        </div>
+        <a
+          v-if="isMobile"
+          :href="`https://www.youtube.com/watch?v=${drawerVideoID}`"
+        >
+          <img
+            v-if="drawerThumbnail"
+            :src="require(`~/assets/img/${drawerThumbnail}`)"
+            class="mb-4"
+          />
+        </a>
+        <div v-if="!isMobile" class="iframe-container mb-4">
+          <iframe
+            :src="`https://www.youtube.com/embed/${drawerVideoID}`"
+            width="100%"
+            height="400px"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <a
+          v-if="isMobile"
+          :href="`https://www.youtube.com/watch?v=${drawerVideoID}`"
+          class="w-auto block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center"
+          >Watch Now!</a
+        >
+        <a
+          target="_blank"
+          v-if="drawerOculusLink"
+          class="w-50 block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded text-center mb-2"
+          :href="drawerOculusLink"
+        >
+          Save To Oculus
+        </a>
+        <span @click="drawerOpen = false" class="close cursor-pointer"
+          >&times;</span
         >
       </div>
-      <a
-        v-if="isMobile"
-        :href="`https://www.youtube.com/watch?v=${drawerVideoID}`"
-      >
-        <img
-          v-if="drawerThumbnail"
-          :src="require(`~/assets/img/${drawerThumbnail}`)"
-          class="mb-4"
-        />
-      </a>
-      <div v-if="!isMobile" class="iframe-container mb-4">
-        <iframe
-          :src="`https://www.youtube.com/embed/${drawerVideoID}`"
-          width="100%"
-          height="400px"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <a
-        target="_blank"
-        v-if="drawerOculusLink"
-        class="w-50 block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded text-center mb-2"
-        :href="drawerOculusLink"
-      >
-        Save To Oculus
-      </a>
-      <a
-        v-if="isMobile"
-        :href="`https://www.youtube.com/watch?v=${drawerVideoID}`"
-        class="w-auto block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center"
-        >Watch Now!</a
-      >
-      <span @click="drawerOpen = false" class="close cursor-pointer"
-        >&times;</span
-      >
       <img
         :src="require('~/assets/img/contours-drawer.svg')"
         class="contours-bg-drawer"
@@ -135,7 +136,7 @@ export default {
       drawerVideoID: '',
       drawerCoords: '',
       windowWidth: window.innerWidth,
-      initialLoad: true,
+      initialLoad: false,
       animateOutIntro: false,
       drawerCategories: [],
       drawerOculusLink: '',
@@ -157,7 +158,7 @@ export default {
       ) {
         this.initialLoad = true
         document.cookie =
-          'initialLoad=true; expires=Fri, 31 Dec 9999 23:59:59 GMT'
+          'initialLoad=false; expires=Fri, 31 Dec 9999 23:59:59 GMT'
       }
     },
     hideIntro() {
@@ -362,7 +363,7 @@ export default {
           app.drawerCategories = JSON.parse(feature.properties.categories)
           app.drawerOculusLink = feature.properties.oculus || ''
 
-          const offset = app.isMobile ? [0, -175] : [-150, 0]
+          const offset = app.isMobile ? [0, -225] : [-150, 0]
 
           map.flyTo({
             center: feature.geometry.coordinates,
@@ -389,13 +390,13 @@ export default {
   left: 0;
   width: 100%;
   background: #fff;
-  padding: 2rem;
   transform: translateY(100vh);
   transition: 300ms ease-in-out;
   display: flex;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
+  max-height: 65vh;
 }
 
 .drawer a {
@@ -419,12 +420,18 @@ export default {
     transform: translateX(100vw);
     width: 45vw;
     height: 100vh;
+    max-height: 100vh;
   }
 
   .drawer--is-active {
     transform: translateX(55vw);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   }
+}
+
+.contours-container {
+  overflow: scroll;
+  padding: 2rem;
 }
 
 .drawer a {
@@ -559,13 +566,13 @@ export default {
     max-width: 1000px;
     width: 1000px;
     opacity: 0.27;
-    transform: translate(-26px, -92px) rotate(175deg);
+    transform: translate(-954px, 0px) rotate(243deg);
   }
 }
 
 .contours-bg-drawer {
   position: absolute;
-  opacity: 0.2;
+  opacity: 0.1;
   top: 0;
   left: 0;
   max-width: 1800px;

@@ -134,7 +134,7 @@ export const videoData = [
   {
     coordinates: [14.965117, 68.363949],
     title: 'Trollfjorden with BRIM EXPLORER',
-    short_title: 'BRIM EXPLORER	Trollfjord',
+    short_title: 'BRIM EXPLORER	 Trollfjord',
     description:
       '<p>Experience the famous Trollfjord! You will be rewarded with breathtaking & magnificent views of steep mountains dropping straight into the fjord. The 2-kilometre (1.2 mi) long fjord cuts into the island of Vågana and flows out into the Raftsundet strait. The fjord has a narrow entrance and steep-sided mountains surrounding it. The name is derived from troll, a figure from Norse mythology.</p><br /> <p>Enjoy this magic hybrid electric cruise with BRIM EXPLORER: <a class="font-bold" target="_blank" href="https://brimexplorer.com/tours/silent"> https://brimexplorer.com/tours/silent.</a> </p>',
     thumbnail: 'trollfjorden.jpg',
