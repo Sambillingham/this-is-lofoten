@@ -89,13 +89,13 @@
         <a
           v-if="isMobile"
           :href="`https://www.youtube.com/watch?v=${drawerVideoID}`"
-          class="w-auto block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center"
+          class="w-auto block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center mb-2"
           >Watch Now!</a
         >
         <a
           target="_blank"
           v-if="drawerOculusLink"
-          class="w-50 block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded text-center mb-2"
+          class="w-50 block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded text-center"
           :href="drawerOculusLink"
         >
           Save To Oculus
@@ -174,7 +174,7 @@ export default {
       return (this.windowWidth = window.innerWidth)
     })
 
-    // this.checkCookie()
+    this.checkCookie()
 
     const app = this
     mapboxgl.accessToken = this.accessToken
@@ -396,7 +396,7 @@ export default {
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-  max-height: 65vh;
+  max-height: 60vh;
 }
 
 .drawer a {
