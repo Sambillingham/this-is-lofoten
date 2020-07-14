@@ -432,6 +432,8 @@ export default {
 .contours-container {
   overflow: scroll;
   padding: 2rem;
+  z-index: 10000;
+  position: relative;
 }
 
 .drawer a {
