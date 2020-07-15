@@ -6,6 +6,7 @@
       :class="{ 'intro--hidden': !initialLoad }"
     >
       <video
+        v-if="!isMobile"
         width="100%"
         height="100%"
         loop
@@ -19,7 +20,13 @@
         class="intro__container"
         :class="{ 'intro__container--hidden': animateOutIntro }"
       >
-        <header><h1>Welcome To This Is Lofoten</h1></header>
+        <header>
+          <img
+            :src="require('~/assets/img/nav-header.svg')"
+            class="intro-header-bg"
+          />
+          <h1>Welcome To This Is Lofoten</h1>
+        </header>
         <div class="intro__description">
           <p>
             Immerse yourself in the beauty of the Lofoten Islands in 360°
@@ -31,7 +38,7 @@
           </p>
           <p class="hashtag">#dreamnowvisitlater</p>
         </div>
-        <span class="btn" @click="hideIntro()">
+        <span class="btn rounded-full" @click="hideIntro()">
           Continue
         </span>
         <img :src="require('~/assets/img/contours.svg')" class="contours-bg" />
@@ -43,13 +50,17 @@
       This Is Lofoten
     </div>
     <div id="mapContainer" class="map"></div>
-    <div :class="{ 'drawer--is-active': drawerOpen }" class="drawer fixed">
+    <div
+      v-if="!initialLoad && drawerOpen"
+      :class="{ 'drawer--is-active': drawerOpen }"
+      class="drawer"
+    >
       <div class="contours-container">
-        <h3 class="mb-1 text-xs text-gray-600 leading-tight capitalize">
+        <h3 class="drawerCoords mb-1 text-xs leading-tight capitalize">
           {{ drawerCoords }}
         </h3>
         <h2
-          class="mb-4 xs:text-xl xs:font-bold sm:font-bold md:text-2xl text-gray-900 leading-tight capitalize"
+          class="mb-4 text-xl xs:font-bold sm:font-bold md:text-2xl text-gray-900 leading-tight capitalize"
         >
           {{ drawerTitle }}
         </h2>
@@ -57,9 +68,9 @@
           v-html="drawerDescription"
           class="mb-8 text-base text-gray-900 leading-normal relative z-10"
         ></div>
-        <div class="mb-4">
+        <div class="mb-2 tags">
           <nuxt-link
-            class="mr-4 text-xs"
+            class="mr-2 text-xs"
             v-for="cat in drawerCategories"
             :key="cat"
             :to="`/category/${cat}`"
@@ -76,7 +87,7 @@
             class="mb-4"
           />
         </a>
-        <div v-if="!isMobile" class="iframe-container mb-4">
+        <div v-if="!isMobile" class="iframe-container mb-2">
           <iframe
             :src="`https://www.youtube.com/embed/${drawerVideoID}`"
             width="100%"
@@ -89,13 +100,13 @@
         <a
           v-if="isMobile"
           :href="`https://www.youtube.com/watch?v=${drawerVideoID}`"
-          class="w-auto block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center mb-2"
+          class="w-auto rounded-full block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 text-center mb-2"
           >Watch Now!</a
         >
         <a
           target="_blank"
           v-if="drawerOculusLink"
-          class="w-50 block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded text-center"
+          class="w-50 block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full text-center"
           :href="drawerOculusLink"
         >
           Save To Oculus
@@ -191,7 +202,10 @@ export default {
     })
 
     const nav = new mapboxgl.NavigationControl()
-    map.addControl(nav, 'top-right')
+
+    if (!this.isMobile) {
+      map.addControl(nav, 'top-right')
+    }
 
     map.on('style.load', function() {
       // Add vector to map
@@ -240,7 +254,7 @@ export default {
           maxzoom: 22,
           layout: {
             'text-field': ['get', 'short_title'],
-            'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+            'text-font': ['DIN Offc Pro Medium'],
             'text-size': 15,
             'text-offset': [0, 2.5],
             'text-allow-overlap': true,
@@ -278,7 +292,7 @@ export default {
           source: 'point',
           filter: ['has', 'point_count'],
           paint: {
-            'circle-color': '#000000',
+            'circle-color': '#2a4082',
             'circle-radius': 12,
             'circle-translate': [0, 33],
           },
@@ -382,12 +396,12 @@ export default {
 .map {
   position: fixed;
   width: 100%;
-  height: calc(100% - 54px);
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .drawer {
-  bottom: 0;
-  left: 0;
   width: 100%;
   background: #fff;
   transform: translateY(100vh);
@@ -395,8 +409,13 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-top: 35vh;
+  min-height: 65vh;
+  border-radius: 15px;
   overflow: hidden;
-  max-height: 60vh;
+  position: relative;
+  z-index: 100;
+  background: rgba(253, 251, 251, 1);
 }
 
 .drawer a {
@@ -405,8 +424,28 @@ export default {
 
 .drawer--is-active {
   transform: translateY(0);
-  position: fixed;
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.contours-container {
+  padding: 2rem;
+  position: relative;
+}
+
+.close {
+  background: #2a4082;
+  color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  font-size: 1.3rem;
+  text-align: center;
+  width: 1.75rem;
+  display: inline-block;
+  top: 0.5rem;
+  line-height: 1.8rem;
+  right: 0.5rem;
+  z-index: 1;
+  font-family: monospace;
 }
 
 @media screen and (min-width: 900px) {
@@ -421,19 +460,25 @@ export default {
     width: 45vw;
     height: 100vh;
     max-height: 100vh;
+    position: fixed;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-top: 0;
+    justify-content: flex-end;
   }
 
   .drawer--is-active {
-    transform: translateX(55vw);
+    transform: translate(0, 0);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   }
-}
 
-.contours-container {
-  overflow: scroll;
-  padding: 2rem;
-  z-index: 10000;
-  position: relative;
+  .contours-container {
+    position: static;
+  }
+  .close {
+    left: 0.5rem;
+    right: auto;
+  }
 }
 
 .drawer a {
@@ -441,47 +486,53 @@ export default {
   z-index: 1;
   font-weight: 700;
 }
-
-/* @media (orientation: landscape) {
-  .drawer {
-    bottom: 0;
-    right: 0;
-    top: 0;
-    transform: translateX(100vw);
-    width: 45vw;
-    height: 100vh;
-  }
-
-  .drawer--is-active {
-    transform: translateX(55vw);
-  }
-} */
+.drawer h2 {
+  color: #2a4082;
+  font-weight: 500;
+}
+.drawer img {
+  border-radius: 5px;
+}
+.drawerCoords {
+  background-color: #2a4082;
+  color: #fafafa;
+  padding: 0.2rem 0.3rem;
+  border-radius: 5px;
+  opacity: 0.4;
+  font-size: 0.65rem;
+  display: inline-block;
+}
+.tags a {
+  background-color: #bdfff0;
+  color: #2a4082;
+  padding: 0.22rem;
+  border-radius: 5px;
+}
 
 .mobile-banner {
+  width: calc(100% - 0.7rem);
+  top: 0.35rem;
+  position: fixed;
+  left: 0.35rem;
+  z-index: 1;
+  border-radius: 15px;
   text-align: center;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.1rem;
   padding: 1rem;
-  border-bottom: solid 1px;
   font-size: 0.875rem;
-  background-color: #fafafa;
+  color: #fafafa;
+  background: #2a4082;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 
-.close {
-  position: absolute;
-  padding: 1rem;
-  font-size: 1.8rem;
-  top: 0;
-  right: 0;
-  z-index: 1;
-}
 .iframe-container {
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
   z-index: 1;
+  border-radius: 5px;
 }
 
 .iframe-container iframe {
@@ -509,6 +560,21 @@ export default {
   overflow: hidden;
 }
 
+.intro header {
+  overflow: hidden;
+  position: relative;
+  padding: 0 0 3rem;
+}
+
+.intro-header-bg {
+  transform: rotate(41deg) translate(-65px, 14px);
+  width: 179%;
+  max-width: 147%;
+  position: absolute;
+  top: -5rem;
+  z-index: 0;
+}
+
 .intro video {
   position: absolute;
   height: 100%;
@@ -528,11 +594,15 @@ export default {
 }
 
 @media screen and (min-width: 900px) {
+  .intro header {
+    padding: 0 0 2rem;
+  }
   .intro video {
     display: block;
   }
-  .intro {
-    /* align-items: center; */
+  .intro-header-bg {
+    transform: rotate(41deg) translate(-40px, 0px);
+    top: -10rem;
   }
 }
 
@@ -541,6 +611,7 @@ export default {
   background: rgba(255, 255, 255, 0.9);
   text-align: center;
   transition: all 350ms ease-in-out;
+  min-height: 100vh;
 }
 
 .contours-bg {
@@ -557,18 +628,17 @@ export default {
 @media screen and (min-width: 900px) {
   .intro__container {
     margin: auto;
-    border: solid 2px #e8e8e8;
     box-shadow: 0 5px 10px rgba(50, 50, 50, 0.2);
-    border-radius: 4px;
-    padding: 4rem;
+    border-radius: 15px;
     overflow: hidden;
+    min-height: auto;
   }
 
   .contours-bg {
     max-width: 1000px;
     width: 1000px;
     opacity: 0.27;
-    transform: translate(-954px, 0px) rotate(243deg);
+    transform: translate(-237px, 51px) rotate(243deg);
   }
 }
 
@@ -608,16 +678,17 @@ export default {
 .intro h1 {
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 0.11rem;
-  border-bottom: solid 1px;
-  margin-bottom: 2rem;
-  color: #343434;
-  border-bottom: solid 2.5px #343434;
-  padding: 0.5rem 0;
+  letter-spacing: 0.18rem;
+  padding: 1rem 2rem;
   text-align: center;
   white-space: nowrap;
-  font-size: 1.1rem;
+  font-size: 0.75rem;
   display: inline-block;
+  color: #2a4082;
+  border-radius: 15px;
+  background: #bdfff0;
+  position: relative;
+  margin: 3rem 1rem 5rem;
 }
 
 .intro__description {
@@ -629,21 +700,12 @@ export default {
 .intro__description p {
   margin-bottom: 2rem;
   font-size: 1.1rem;
+  color: #2a4082;
 }
 @media screen and (min-width: 900px) {
   .intro h1 {
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.18rem;
-    border-bottom: solid 1px;
-    margin-bottom: 2rem;
-    color: #343434;
-    border-bottom: solid 2.5px #343434;
-    padding: 0.5rem 0;
-    text-align: center;
-    white-space: nowrap;
-    font-size: 1.6rem;
-    display: inline-block;
+    font-size: 1.25rem;
+    margin: 2rem 1rem 6rem;
   }
 
   .intro__description {
@@ -670,20 +732,20 @@ export default {
 
 .intro .btn {
   cursor: pointer;
-  background: #343434;
-  color: #fff;
+  background: #2a4082;
+  color: #bdfff0;
   padding: 0.75rem 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   font-size: 0.75rem;
   display: inline-block;
   transition: all 400ms ease;
-  border-radius: 4px;
   position: relative;
   z-index: 1;
+  margin-bottom: 3rem;
 }
 .intro .btn:hover {
-  background: #545454;
+  background: #152965;
   box-shadow: 0 5px 10px rgba(50, 50, 50, 0.2);
 }
 </style>

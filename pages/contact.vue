@@ -101,7 +101,8 @@ export default {
 
 .content a {
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 0.775rem;
+  color: #2a4082;
 }
 
 svg {
@@ -109,6 +110,7 @@ svg {
   height: 24px;
   width: 24px;
   margin-right: 0.5rem;
+  fill: #2a4082;
 }
 
 svg.email {
@@ -132,11 +134,15 @@ h2 {
   font-size: 0.875rem;
   background-color: #fafafa;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  background-color: #2a4082;
+  color: #fff;
+  margin: 0.35rem;
+  border-radius: 15px;
 }
 
 @media screen and (min-width: 900px) {
   .content-title {
-    padding-left: 330px;
+    margin-left: 316px;
     text-align: left;
   }
   .content {
@@ -146,6 +152,11 @@ h2 {
   }
   .content a {
     font-size: 1.1rem;
+  }
+  h2 {
+    margin: 0;
+    border-radius: 0;
+    border-bottom-left-radius: 15px;
   }
 }
 </style>
