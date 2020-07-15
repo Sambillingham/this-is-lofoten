@@ -506,6 +506,7 @@ export default {
 }
 .drawer img {
   border-radius: 5px;
+  pointer-events: none;
 }
 .drawerCoords {
   background-color: #2a4082;
@@ -639,6 +640,7 @@ export default {
   width: 1861px;
   transform: translate(-752px, 0px) rotate(272deg);
   z-index: 0;
+  pointer-events: none;
 }
 
 @media screen and (min-width: 900px) {
@@ -667,6 +669,7 @@ export default {
   width: 1861px;
   transform: translate(-752px, 0px) rotate(272deg);
   z-index: 0;
+  pointer-events: none;
 }
 
 @media screen and (min-width: 900px) {

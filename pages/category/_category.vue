@@ -3,6 +3,9 @@
     <Navbar />
     <h2 class="content-title">{{ category }}</h2>
     <div class="content">
+      <p v-if="currentContent.length <= 0">
+        We'll upload videos for this category soon.
+      </p>
       <div v-for="video in currentContent" :key="video" class="video">
         <a :href="`https://www.youtube.com/watch?v=${video.videoID}`">
           <svg
