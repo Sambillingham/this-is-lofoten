@@ -191,9 +191,28 @@ export default {
   },
 
   mounted() {
-    window.addEventListener('resize', () => {
-      return (this.windowWidth = window.innerWidth)
-    })
+    let passiveSupported = false
+
+    try {
+      const options = {
+        get passive() {
+          passiveSupported = true
+          return false
+        },
+      }
+      window.addEventListener('test', null, options)
+      window.removeEventListener('test', null, options)
+    } catch (err) {
+      passiveSupported = false
+    }
+
+    window.addEventListener(
+      'resize',
+      () => {
+        return (this.windowWidth = window.innerWidth)
+      },
+      passiveSupported ? { passive: true } : false,
+    )
 
     this.checkCookie()
 
