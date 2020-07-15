@@ -157,7 +157,7 @@ export default {
   padding: 1rem;
   border-bottom: solid 1px;
   margin-bottom: 1rem;
-  background-color: #ffe3e3;
+  background-color: #bdfff0;
   color: #2a4082;
   position: absolute;
   border-radius: 15px;

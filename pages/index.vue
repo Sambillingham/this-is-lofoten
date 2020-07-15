@@ -147,7 +147,7 @@ export default {
       drawerVideoID: '',
       drawerCoords: '',
       windowWidth: window.innerWidth,
-      initialLoad: true,
+      initialLoad: false,
       animateOutIntro: false,
       drawerCategories: [],
       drawerOculusLink: '',
@@ -503,7 +503,7 @@ export default {
   display: inline-block;
 }
 .tags a {
-  background-color: #ffe9e9;
+  background-color: #bdfff0;
   color: #2a4082;
   padding: 0.22rem;
   border-radius: 5px;
@@ -686,7 +686,7 @@ export default {
   display: inline-block;
   color: #2a4082;
   border-radius: 15px;
-  background: #ffe3e3;
+  background: #bdfff0;
   position: relative;
   margin: 3rem 1rem 5rem;
 }
@@ -733,7 +733,7 @@ export default {
 .intro .btn {
   cursor: pointer;
   background: #2a4082;
-  color: #ffe3e3;
+  color: #bdfff0;
   padding: 0.75rem 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.15rem;

@@ -146,6 +146,7 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .video h2 {
   margin: -1rem 0 0;
@@ -157,11 +158,11 @@ export default {
 
 .video svg {
   position: absolute;
-  top: 3.5rem;
+  top: 50%;
   left: 50%;
   width: 2.5rem;
   opacity: 0.6;
-  transform: translateX(-50%);
+  transform: translate(-50%, calc(-50% - 0.25rem));
 }
 
 .video svg path {
