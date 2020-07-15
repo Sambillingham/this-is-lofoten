@@ -146,7 +146,7 @@ export default {
       drawerVideoID: '',
       drawerCoords: '',
       windowWidth: window.innerWidth,
-      initialLoad: true,
+      initialLoad: false,
       animateOutIntro: false,
       drawerCategories: [],
       drawerOculusLink: '',
