@@ -334,7 +334,7 @@ export default {
           filter: ['has', 'point_count'],
           layout: {
             'text-field': '{point_count_abbreviated}',
-            'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+            'text-font': ['DIN Offc Pro Medium'],
             'text-size': 17,
             'text-offset': [0, 2],
           },
