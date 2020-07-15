@@ -146,7 +146,7 @@ export default {
       drawerVideoID: '',
       drawerCoords: '',
       windowWidth: window.innerWidth,
-      initialLoad: false,
+      initialLoad: true,
       animateOutIntro: false,
       drawerCategories: [],
       drawerOculusLink: '',
@@ -625,7 +625,9 @@ export default {
   background: rgba(255, 255, 255, 0.9);
   text-align: center;
   transition: all 350ms ease-in-out;
-  min-height: 100vh;
+  border-radius: 15px;
+  overflow: hidden;
+  border: none;
 }
 
 .contours-bg {
