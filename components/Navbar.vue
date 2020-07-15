@@ -7,6 +7,7 @@
     </div>
     <div :class="{ 'nav-list--active': navIsOpen }" class="nav-list">
       <header v-if="!isMobile">
+        <img :src="require('~/assets/img/nav-header.svg')" class="nav-bg" />
         <h1><span class="l1">This is</span><span class="l2"> Lofoten</span></h1>
       </header>
       <nuxt-link to="/">
@@ -78,6 +79,14 @@ export default {
 </script>
 
 <style scoped>
+.nav-bg {
+  position: absolute;
+  top: -9rem;
+  max-width: 434px;
+  width: 2000px;
+  transform: rotate(63deg) translate(6px, 98px);
+}
+
 .nav-icon {
   position: fixed;
   top: 0.35rem;
@@ -132,6 +141,7 @@ export default {
     box-shadow: 0 3px 3px rgba(33, 33, 33, 0.1);
     padding: 0 0 0 2rem;
     border-radius: 0;
+    padding-top: 8rem;
   }
 }
 
@@ -147,11 +157,14 @@ export default {
   padding: 1rem;
   border-bottom: solid 1px;
   margin-bottom: 1rem;
-  background-color: #f1f1f1;
-  color: #343434;
-  border: solid 2.5px #343434;
+  background-color: #ffe3e3;
+  color: #2a4082;
+  position: absolute;
+  border-radius: 15px;
+  border: none;
+  top: 2rem;
   padding: 0.5rem 1rem;
-  margin-top: 3.5rem;
+  margin-top: 0;
   text-align: center;
   white-space: nowrap;
   font-size: 1.1rem;
@@ -162,12 +175,6 @@ export default {
 }
 .l2 {
   letter-spacing: 0.22rem;
-}
-
-@media screen and (min-width: 900px) {
-  .nav-list h1 {
-    margin-top: 2rem;
-  }
 }
 
 .nav-list h2 {

@@ -142,7 +142,7 @@ h2 {
 
 @media screen and (min-width: 900px) {
   .content-title {
-    padding-left: 330px;
+    margin-left: 316px;
     text-align: left;
   }
   .content {
@@ -152,6 +152,11 @@ h2 {
   }
   .content a {
     font-size: 1.1rem;
+  }
+  h2 {
+    margin: 0;
+    border-radius: 0;
+    border-bottom-left-radius: 15px;
   }
 }
 </style>

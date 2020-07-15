@@ -6,6 +6,7 @@
       :class="{ 'intro--hidden': !initialLoad }"
     >
       <video
+        v-if="!isMobile"
         width="100%"
         height="100%"
         loop
@@ -19,7 +20,13 @@
         class="intro__container"
         :class="{ 'intro__container--hidden': animateOutIntro }"
       >
-        <header><h1>Welcome To This Is Lofoten</h1></header>
+        <header>
+          <img
+            :src="require('~/assets/img/nav-header.svg')"
+            class="intro-header-bg"
+          />
+          <h1>Welcome To This Is Lofoten</h1>
+        </header>
         <div class="intro__description">
           <p>
             Immerse yourself in the beauty of the Lofoten Islands in 360°
@@ -31,7 +38,7 @@
           </p>
           <p class="hashtag">#dreamnowvisitlater</p>
         </div>
-        <span class="btn" @click="hideIntro()">
+        <span class="btn rounded-full" @click="hideIntro()">
           Continue
         </span>
         <img :src="require('~/assets/img/contours.svg')" class="contours-bg" />
@@ -89,13 +96,13 @@
         <a
           v-if="isMobile"
           :href="`https://www.youtube.com/watch?v=${drawerVideoID}`"
-          class="w-auto rounded-full block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center mb-2"
+          class="w-auto rounded-full block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 text-center mb-2"
           >Watch Now!</a
         >
         <a
           target="_blank"
           v-if="drawerOculusLink"
-          class="w-50 block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded text-center"
+          class="w-50 block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full text-center"
           :href="drawerOculusLink"
         >
           Save To Oculus
@@ -548,6 +555,21 @@ export default {
   overflow: hidden;
 }
 
+.intro header {
+  overflow: hidden;
+  position: relative;
+  padding: 0 0 3rem;
+}
+
+.intro-header-bg {
+  transform: rotate(44deg) translate(-50px, 0px);
+  width: 179%;
+  max-width: 147%;
+  position: absolute;
+  top: -5rem;
+  z-index: 0;
+}
+
 .intro video {
   position: absolute;
   height: 100%;
@@ -567,11 +589,15 @@ export default {
 }
 
 @media screen and (min-width: 900px) {
+  .intro header {
+    padding: 0 0 6rem;
+  }
   .intro video {
     display: block;
   }
-  .intro {
-    /* align-items: center; */
+  .intro-header-bg {
+    transform: rotate(41deg) translate(-40px, 0px);
+    top: -12rem;
   }
 }
 
@@ -580,6 +606,7 @@ export default {
   background: rgba(255, 255, 255, 0.9);
   text-align: center;
   transition: all 350ms ease-in-out;
+  min-height: 100vh;
 }
 
 .contours-bg {
@@ -596,18 +623,17 @@ export default {
 @media screen and (min-width: 900px) {
   .intro__container {
     margin: auto;
-    border: solid 2px #e8e8e8;
     box-shadow: 0 5px 10px rgba(50, 50, 50, 0.2);
-    border-radius: 4px;
-    padding: 4rem;
+    border-radius: 15px;
     overflow: hidden;
+    min-height: auto;
   }
 
   .contours-bg {
     max-width: 1000px;
     width: 1000px;
     opacity: 0.27;
-    transform: translate(-954px, 0px) rotate(243deg);
+    transform: translate(-237px, 51px) rotate(243deg);
   }
 }
 
@@ -647,16 +673,17 @@ export default {
 .intro h1 {
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 0.11rem;
-  border-bottom: solid 1px;
-  margin-bottom: 2rem;
-  color: #343434;
-  border-bottom: solid 2.5px #343434;
-  padding: 0.5rem 0;
+  letter-spacing: 0.18rem;
+  padding: 1rem 2rem;
   text-align: center;
   white-space: nowrap;
-  font-size: 1.1rem;
+  font-size: 0.75rem;
   display: inline-block;
+  color: #2a4082;
+  border-radius: 15px;
+  background: #ffe3e3;
+  position: relative;
+  margin: 3rem 1rem 5rem;
 }
 
 .intro__description {
@@ -668,21 +695,12 @@ export default {
 .intro__description p {
   margin-bottom: 2rem;
   font-size: 1.1rem;
+  color: #2a4082;
 }
 @media screen and (min-width: 900px) {
   .intro h1 {
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.18rem;
-    border-bottom: solid 1px;
-    margin-bottom: 2rem;
-    color: #343434;
-    border-bottom: solid 2.5px #343434;
-    padding: 0.5rem 0;
-    text-align: center;
-    white-space: nowrap;
-    font-size: 1.6rem;
-    display: inline-block;
+    font-size: 1.25rem;
+    margin: auto;
   }
 
   .intro__description {
@@ -709,20 +727,20 @@ export default {
 
 .intro .btn {
   cursor: pointer;
-  background: #343434;
-  color: #fff;
+  background: #2a4082;
+  color: #ffe3e3;
   padding: 0.75rem 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   font-size: 0.75rem;
   display: inline-block;
   transition: all 400ms ease;
-  border-radius: 4px;
   position: relative;
   z-index: 1;
+  margin-bottom: 3rem;
 }
 .intro .btn:hover {
-  background: #545454;
+  background: #152965;
   box-shadow: 0 5px 10px rgba(50, 50, 50, 0.2);
 }
 </style>

@@ -83,6 +83,7 @@ export default {
 .category-container {
   overflow: hidden;
   position: relative;
+  min-height: 100vh;
 }
 
 .contours-bg {
@@ -104,7 +105,7 @@ export default {
     left: 0;
     max-width: 1400px;
     width: 1400px;
-    transform: translate(-352px, 300px) rotate(-15deg);
+    transform: translate(201px, 417px) rotate(-27deg);
     z-index: 0;
   }
 }
@@ -118,7 +119,7 @@ export default {
 }
 
 .content-title {
-  line-height: 1.8rem;
+  line-height: 1.3rem;
 }
 
 @media screen and (min-width: 900px) {
@@ -176,6 +177,16 @@ export default {
   .video {
     flex-basis: 48%;
   }
+  .video h2 {
+    margin: -0.5rem 0 0;
+  }
+  .content-title {
+    padding: 1rem;
+    margin: 0;
+    margin-left: 316px;
+    border-radius: 0;
+    border-bottom-left-radius: 15px;
+  }
 }
 
 h2 {
@@ -191,12 +202,14 @@ h2 {
   color: #fff;
   margin: 0.35rem;
   border-radius: 15px;
+  z-index: 1;
 }
 
 .iframe-container {
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
+  border-radius: 5px;
 }
 
 .iframe-container iframe {
