@@ -5,7 +5,7 @@ export const videoData = [
     short_title: 'Småtindan Winter',
     description:
       'Relax with this beautiful winter landscape from Småtindan, Kabelvåg, Lofoten.',
-    thumbnail: 'Smatindan-360-VR.png',
+    thumbnail: 'Smatindan-360-VR.jpg',
     videoID: 'V4TEhrYG168',
     categories: ['Vågan', 'Relaxing', 'Winter'],
   },
@@ -15,7 +15,7 @@ export const videoData = [
     short_title: 'Svolværgeita',
     description:
       'Experience how it is to stand on top of the Svolvær goat in this 360 VR video! Warning!!! Not for people with fear of heights!!!',
-    thumbnail: 'Svolværgeita-360-VR.png',
+    thumbnail: 'Svolværgeita-360-VR.jpg',
     videoID: 'cFvkC9WzMtI',
     categories: ['Vågan', 'Summer', 'Activites'],
   },
@@ -25,7 +25,7 @@ export const videoData = [
     short_title: 'Kongstind winter',
     description:
       'Fly over the amazing Kongstind Mountain, 552 meters above sea level. Looking down at Svolvær.',
-    thumbnail: 'Kongstind-360-VR.png',
+    thumbnail: 'Kongstind-360-VR.jpg',
     videoID: 'jXKmHpAQMdM',
     categories: ['Vågan', 'Winter', 'Aerials'],
   },
@@ -35,7 +35,7 @@ export const videoData = [
     short_title: 'Himmeltind Aerial',
     description:
       'See the amazing view from Himmeltinden, Vestvågøy. Looking down at Uttakleiv and the famous Haukland beach. This is springtime in Lofoten, with two different seasons at the same time! Winter in the mountains and (almost) summer at sea level.',
-    thumbnail: 'Himmeltind-360-VR.png',
+    thumbnail: 'Himmeltind-360-VR.jpg',
     videoID: 'dBWjef-2nn8',
     categories: ['Vestvågøy', 'Winter', 'Aerials'],
   },
@@ -45,7 +45,7 @@ export const videoData = [
     short_title: 'Cessna flight',
     description:
       'Join us on a flight over Lofoten! We are flying a Cessna F172P from Svolvær Airport, Helle. Thanks to pilot Alexander Jansen, and Lofoten Flyklubb for this amazing experience!',
-    thumbnail: 'Cessna-flight-over-Lofoten-360-VR.png',
+    thumbnail: 'Cessna-flight-over-Lofoten-360-VR.jpg',
     videoID: 'eDx-F-RBdc8',
     categories: ['Vestvågøy', 'Spring', 'Aerials'],
   },
@@ -55,7 +55,7 @@ export const videoData = [
     short_title: 'Reinebringen, midnight sun',
     description:
       'Enjoy this famous view from Reinebringen in June, when the sun never goes down. Looking down at Reine, Sakrisøy, Hamnøy and into Bunesfjorden and Kjerkfjorden (videos from these places are coming to the plattform soon). Check out www.catogarden.no for a unique place to stay and activities from the area.',
-    thumbnail: 'Reinebringen-360-VR.png',
+    thumbnail: 'Reinebringen-360-VR.jpg',
     videoID: 'SMU8ObOUw0k',
     categories: ['Moskenes', 'Summer', 'Aerials'],
     oculus:
@@ -67,7 +67,7 @@ export const videoData = [
     short_title: 'Skrova Aerial',
     description:
       'See the Skrova Island from above. Skrova is a small island group and village area in Vågan. The 2.5-square-kilometre Skrova island group in the Lofoten archipelago, it is located in the Vestfjorden, south of the islands of Vågana, Lillemolla, and Stormolla. The largest island in the group is Storskrova and the island of Heimskrova is where most of the population is located. The six main inhabited islands in the group are all interconnected by a small bridge and several man-made causeways.',
-    thumbnail: 'Torvdalen.png',
+    thumbnail: 'skrova.jpg',
     videoID: 'kBVvGXquN5o',
     categories: ['Vågan', 'Spring', 'Aerials'],
   },
@@ -77,7 +77,7 @@ export const videoData = [
     short_title: 'Torvdalen viewpoint',
     description:
       'Enjoy this popular viewpoint from the air. Here you can see Himmeltinden behind Borge in the front and Eggum to the right.',
-    thumbnail: 'Torvdalen.png',
+    thumbnail: 'Torvdalen.jpg',
     videoID: 'CfyMVOzK9aU',
     categories: ['Vestvågøy', 'Spring', 'Aerials'],
   },
@@ -87,7 +87,7 @@ export const videoData = [
     short_title: 'Eagle Safari',
     description:
       'XXLofoten offers RIB tours from Svolvær. <br/><br/> There is a large population of Sea eagles in Raftsundet, and one of the highlights is without doubt when a sea eagle circle a few meters above your head. <br/><br/> This is the eagle with the largest wing span in the world, up to 2,65 meters. Our guides have a high awareness on safety, and will make sure that you have a comfortable experience. Therefore, this tour is a good option for the whole family. <br/> <a class="font-bold" target="_blank" href="https://www.xxlofoten.no/zodiac-safari/">https://www.xxlofoten.no/zodiac-safari/</a>',
-    thumbnail: 'Eagle-safari-360-VR.png',
+    thumbnail: 'Eagle-safari-360-VR.jpg',
     videoID: 'xtV0vW_e4wg',
     categories: ['Vågan', 'Spring', 'Activites'],
   },
@@ -97,7 +97,7 @@ export const videoData = [
     short_title: 'Vestpollen',
     description:
       'Enjoy this flight over the calm waters in Vestpollen with beautiful evening light.',
-    thumbnail: '',
+    thumbnail: 'Eagle-safari-360-VR.jpg',
     videoID: 'zJaMeS1Lt5Y',
     categories: ['Vågan', 'Spring', 'Aerials'],
   },
@@ -107,7 +107,7 @@ export const videoData = [
     short_title: 'Ballstad',
     description:
       'See Ballstad in Lofotenfrom above! This is from the spring, when all the cod is being dried on the racks in almost all the towns in Lofoten.',
-    thumbnail: 'Ballstad.png',
+    thumbnail: 'Ballstad.jpg',
     videoID: 'QtgAM7cpaeM',
     categories: ['Vestvågøy', 'Spring', 'Aerials'],
   },
@@ -117,7 +117,7 @@ export const videoData = [
     short_title: 'Road to Nusfjord',
     description:
       'Look around on this popular photo spot. Looking up at Stjerntinden.',
-    thumbnail: 'RoadNusfjord.png',
+    thumbnail: 'RoadNusfjord.jpg',
     videoID: 'uajMZaVYDAg',
     categories: ['Flakstadøy', 'Winter', 'Relaxing'],
   },
@@ -127,7 +127,7 @@ export const videoData = [
     short_title: 'Storvatnet',
     description:
       'Look around on this popular photo spot. Looking down at Storvatnet and up at Stjerntinden.',
-    thumbnail: 'storvatnet.png',
+    thumbnail: 'storvatnet.jpg',
     videoID: 'c2nU_Cr03Dg',
     categories: ['Flakstadøy', 'Winter', 'Relaxing'],
   },

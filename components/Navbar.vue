@@ -79,18 +79,20 @@ export default {
 
 <style scoped>
 .nav-icon {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
+  top: 0.35rem;
+  left: 0.35rem;
   width: 3.3rem;
   height: 3.3rem;
-  background: #fafafa;
+  background: #2a4082;
   z-index: 130;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+  border-radius: 15px;
+  z-index: 1000;
 }
 
 @media screen and (min-width: 900px) {
@@ -102,7 +104,7 @@ export default {
 .nav-icon span {
   height: 3px;
   width: 100%;
-  background-color: #222;
+  background-color: #fafafa;
   display: inline-block;
 }
 
@@ -116,8 +118,10 @@ export default {
   transition: 200ms ease-in-out;
   padding: 1.5rem 3rem 0.5rem 2rem;
   margin-top: 4.3rem;
-  border-radius: 5px;
+  border-radius: 15px;
   overflow: hidden;
+  color: #2a4082;
+  z-index: 1000;
 }
 
 @media screen and (min-width: 900px) {
@@ -132,7 +136,7 @@ export default {
 }
 
 .nav-list--active {
-  transform: translateX(1rem);
+  transform: translateX(0.35rem);
   box-shadow: 0 10px 10px rgba(33, 33, 33, 0.2);
 }
 

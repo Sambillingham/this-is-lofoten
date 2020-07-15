@@ -4,8 +4,8 @@
     <h2 class="content-title">About</h2>
     <div class="content">
       <p>
-        This is Lofoten is a project made locally by the Lofoten Film
-        Collective.
+        This is Lofoten is a project made locally by the
+        <a href="https://lofotenfilm.com">Lofoten Film Collective.</a>
       </p>
       <p>
         We want to share our beautiful surroundings with the rest of the world,
@@ -74,6 +74,8 @@ export default {
 }
 .hashtag {
   font-weight: 700;
+  color: #2a4082;
+  font-style: italic;
 }
 
 h2 {
@@ -87,10 +89,15 @@ h2 {
   font-size: 0.875rem;
   background-color: #fafafa;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  background-color: #2a4082;
+  color: #fff;
+  margin: 0.35rem;
+  border-radius: 15px;
 }
 
 a {
   font-weight: 700;
+  color: #2a4082;
 }
 @media screen and (min-width: 900px) {
   .content-title {
