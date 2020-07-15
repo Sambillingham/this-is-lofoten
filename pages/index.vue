@@ -51,7 +51,7 @@
     </div>
     <div id="mapContainer" class="map"></div>
     <div
-      v-if="!initialLoad"
+      v-if="!initialLoad && drawerOpen"
       :class="{ 'drawer--is-active': drawerOpen }"
       class="drawer"
     >
@@ -437,17 +437,15 @@ export default {
   color: #fff;
   border-radius: 50%;
   position: absolute;
-  padding: 0.35rem;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
+  text-align: center;
+  width: 1.75rem;
+  display: inline-block;
   top: 0.5rem;
-  line-height: 1rem;
+  line-height: 1.8rem;
   right: 0.5rem;
   z-index: 1;
-  height: 1.8rem;
-  width: 1.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: monospace;
 }
 
 @media screen and (min-width: 900px) {

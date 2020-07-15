@@ -157,7 +157,7 @@ export default {
 
 .video svg {
   position: absolute;
-  top: 3rem;
+  top: 3.5rem;
   left: 50%;
   width: 2.5rem;
   opacity: 0.6;
