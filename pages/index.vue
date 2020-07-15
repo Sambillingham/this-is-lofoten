@@ -51,11 +51,11 @@
     </div>
     <div id="mapContainer" class="map"></div>
     <div
-      v-if="!initialLoad && drawerOpen"
+      v-if="!initialLoad"
       :class="{ 'drawer--is-active': drawerOpen }"
       class="drawer"
     >
-      <div class="contours-container">
+      <div v-if="drawerOpen" class="contours-container">
         <h3 class="drawerCoords mb-1 text-xs leading-tight capitalize">
           {{ drawerCoords }}
         </h3>
@@ -111,11 +111,10 @@
         >
           Save To Oculus
         </a>
-        <span @click="drawerOpen = false" class="close cursor-pointer"
-          >&times;</span
-        >
+        <span @click="closeDrawer()" class="close cursor-pointer">&times;</span>
       </div>
       <img
+        v-if="drawerOpen"
         :src="require('~/assets/img/contours-drawer.svg')"
         class="contours-bg-drawer"
       />
@@ -161,6 +160,17 @@ export default {
   },
 
   methods: {
+    closeDrawer() {
+      this.drawerOpen = false
+      this.drawerTitle = ''
+      this.drawerDescription = ''
+      this.drawerThumbnail = ''
+      this.drawerVideoID = ''
+      this.drawerCoords = ''
+      this.drawerCategories = []
+      this.drawerOculusLink = ''
+    },
+
     checkCookie() {
       if (
         !document.cookie
@@ -315,7 +325,7 @@ export default {
         })
 
         map.on('dragstart', function() {
-          app.drawerOpen = false
+          app.closeDrawer()
         })
 
         map.on('click', 'clusters', function(e) {
@@ -377,7 +387,7 @@ export default {
           app.drawerCategories = JSON.parse(feature.properties.categories)
           app.drawerOculusLink = feature.properties.oculus || ''
 
-          const offset = app.isMobile ? [0, -225] : [-150, 0]
+          const offset = app.isMobile ? [0, -220] : [-150, 0]
 
           map.flyTo({
             center: feature.geometry.coordinates,
@@ -405,12 +415,13 @@ export default {
   width: 100%;
   background: #fff;
   transform: translateY(100vh);
-  transition: 300ms ease-in-out;
+  transition-delay: 350ms;
+  transition: all 350ms ease-in-out;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   margin-top: 35vh;
-  min-height: 65vh;
+  min-height: 0;
   border-radius: 15px;
   overflow: hidden;
   position: relative;
@@ -423,6 +434,9 @@ export default {
 }
 
 .drawer--is-active {
+  min-height: 65vh;
+  transition: transform 350ms ease-in-out;
+  transition-delay: 50ms;
   transform: translateY(0);
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.15);
 }
