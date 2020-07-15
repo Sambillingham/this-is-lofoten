@@ -597,14 +597,14 @@ export default {
 
 @media screen and (min-width: 900px) {
   .intro header {
-    padding: 0 0 6rem;
+    padding: 0 0 2rem;
   }
   .intro video {
     display: block;
   }
   .intro-header-bg {
     transform: rotate(41deg) translate(-40px, 0px);
-    top: -12rem;
+    top: -10rem;
   }
 }
 
@@ -707,7 +707,7 @@ export default {
 @media screen and (min-width: 900px) {
   .intro h1 {
     font-size: 1.25rem;
-    margin: 3rem 1rem 5rem;
+    margin: 2rem 1rem 6rem;
   }
 
   .intro__description {
