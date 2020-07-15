@@ -411,8 +411,7 @@ export default {
   flex-direction: column;
   margin-top: 35vh;
   min-height: 65vh;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
+  border-radius: 15px;
   overflow: hidden;
   position: relative;
   z-index: 100;
@@ -444,6 +443,11 @@ export default {
   line-height: 1rem;
   right: 0.5rem;
   z-index: 1;
+  height: 1.8rem;
+  width: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (min-width: 900px) {
@@ -460,8 +464,7 @@ export default {
     max-height: 100vh;
     position: fixed;
     border-top-right-radius: 0;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 0;
     margin-top: 0;
     justify-content: flex-end;
   }
