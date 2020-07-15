@@ -707,7 +707,7 @@ export default {
 @media screen and (min-width: 900px) {
   .intro h1 {
     font-size: 1.25rem;
-    margin: auto;
+    margin: 3rem 1rem 5rem;
   }
 
   .intro__description {
