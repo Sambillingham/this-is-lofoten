@@ -50,7 +50,11 @@
       This Is Lofoten
     </div>
     <div id="mapContainer" class="map"></div>
-    <div :class="{ 'drawer--is-active': drawerOpen }" class="drawer">
+    <div
+      v-if="!initialLoad"
+      :class="{ 'drawer--is-active': drawerOpen }"
+      class="drawer"
+    >
       <div class="contours-container">
         <h3 class="drawerCoords mb-1 text-xs leading-tight capitalize">
           {{ drawerCoords }}
@@ -143,7 +147,7 @@ export default {
       drawerVideoID: '',
       drawerCoords: '',
       windowWidth: window.innerWidth,
-      initialLoad: false,
+      initialLoad: true,
       animateOutIntro: false,
       drawerCategories: [],
       drawerOculusLink: '',
@@ -562,7 +566,7 @@ export default {
 }
 
 .intro-header-bg {
-  transform: rotate(44deg) translate(-50px, 0px);
+  transform: rotate(41deg) translate(-65px, 14px);
   width: 179%;
   max-width: 147%;
   position: absolute;
