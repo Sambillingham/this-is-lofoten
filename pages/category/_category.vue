@@ -7,7 +7,10 @@
         We'll upload videos for this category soon.
       </p>
       <div v-for="video in currentContent" :key="video" class="video">
-        <a :href="`https://www.youtube.com/watch?v=${video.videoID}`">
+        <a
+          v-if="isMobile"
+          :href="`https://www.youtube.com/watch?v=${video.videoID}`"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -25,11 +28,28 @@
               fill="#000000"
             />
           </svg>
-          <img
-            v-if="isMobile"
-            :src="require(`~/assets/img/${video.thumbnail}`)"
-          />
-          <div v-else class="iframe-container">
+          <img :src="require(`~/assets/img/${video.thumbnail}`)" />
+          <h2>{{ video.title }}</h2>
+        </a>
+        <div v-else>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            viewBox="0 0 96 96"
+            x="0px"
+            y="0px"
+          >
+            <path
+              d="M48 4c24.256 0 44 19.74 44 44s-19.744 44-44 44-44-19.74-44-44 19.744-44 44-44zM48 0c-26.508 0-48 21.492-48 48s21.492 48 48 48 48-21.492 48-48-21.492-48-48-48v0z"
+              fill="#000000"
+            />
+            <path
+              d="M34 70.784c-0.344 0-0.692-0.088-1-0.268-0.616-0.356-1-1.016-1-1.732v-41.576c0-0.716 0.384-1.376 1-1.732 0.616-0.36 1.384-0.36 2 0l36 20.784c0.616 0.356 1 1.016 1 1.732s-0.384 1.376-1 1.732l-36 20.784c-0.308 0.188-0.656 0.276-1 0.276zM36 30.68v34.64l30-17.32-30-17.32z"
+              fill="#000000"
+            />
+          </svg>
+          <div class="iframe-container">
             <iframe
               :src="`https://www.youtube.com/embed/${video.videoID}`"
               class="mb-4"
@@ -39,7 +59,7 @@
             ></iframe>
           </div>
           <h2>{{ video.title }}</h2>
-        </a>
+        </div>
       </div>
     </div>
     <img :src="require('~/assets/img/contours-blue.svg')" class="contours-bg" />
@@ -145,12 +165,14 @@ export default {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.11);
 }
 
-.video a {
+.video a,
+.video > div {
   width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
 }
+
 .video h2 {
   margin: -1rem 0 0;
   flex-grow: 1;
