@@ -5,10 +5,12 @@
 </template>
 
 <style>
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
+
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
