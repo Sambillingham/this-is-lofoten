@@ -221,6 +221,19 @@ export const videoData = [
   },
 ]
 
+export const labelData = [
+  {
+    coordinates: [13.0889693, 67.934781],
+    title: 'Catogården',
+    facebook: 'https://www.facebook.com/catogarden/',
+  },
+  {
+    coordinates: [14.5635126, 68.2318963],
+    title: 'Brim Explorer',
+    facebook: 'https://www.facebook.com/brimexplorer/',
+  },
+]
+
 export const categories = [
   'Vågan',
   'Vestvågøy',

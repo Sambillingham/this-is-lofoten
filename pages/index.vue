@@ -125,7 +125,7 @@
 <script>
 import mapboxgl from 'mapbox-gl'
 
-import { videoData } from '@/assets/js/data'
+import { videoData, labelData } from '@/assets/js/data'
 
 import Navbar from '@/components/Navbar'
 
@@ -341,6 +341,58 @@ export default {
           paint: {
             'text-color': 'white',
           },
+        })
+
+        map.addSource('business', {
+          type: 'geojson',
+          data: {
+            type: 'FeatureCollection',
+            features: labelData.map((d) => {
+              return {
+                type: 'Feature',
+                geometry: {
+                  type: 'Point',
+                  coordinates: d.coordinates,
+                },
+                properties: {
+                  title: d.title,
+                  facebook: d.facebook,
+                },
+              }
+            }),
+          },
+        })
+
+        map.addLayer({
+          id: 'name-labels',
+          type: 'symbol',
+          source: 'business',
+          minzoom: 9,
+          maxzoom: 22,
+          layout: {
+            'text-field': ['get', 'title'],
+            'text-font': ['DIN Offc Pro Medium'],
+            'text-size': 15,
+            'text-offset': [0, 2.5],
+            'text-allow-overlap': true,
+          },
+          paint: {
+            'text-color': '#2a4082',
+            'text-halo-color': 'white',
+            'text-halo-blur': 3,
+            'text-halo-width': 1,
+          },
+        })
+
+        map.on('click', 'name-labels', function(e) {
+          const features = map.queryRenderedFeatures(e.point, {
+            layers: ['name-labels'],
+          })
+
+          if (!features.length) return
+
+          const win = window.open(features[0].properties.facebook, '_blank')
+          win.focus()
         })
 
         map.on('dragstart', function() {
