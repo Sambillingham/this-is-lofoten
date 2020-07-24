@@ -550,8 +550,8 @@ export default {
     top: 0;
     transform: translateX(100vw);
     width: 45vw;
-    height: 100vh;
-    max-height: 100vh;
+    height: 100%;
+    max-height: 100%;
     position: fixed;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
