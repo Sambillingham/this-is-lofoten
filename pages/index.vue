@@ -642,8 +642,6 @@ export default {
   opacity: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
 }
 
 .intro header {
@@ -696,6 +694,10 @@ export default {
 }
 
 @media screen and (min-width: 900px) {
+  .intro {
+    align-items: center;
+    overflow: hidden;
+  }
   .intro header {
     padding: 0 0 2rem;
   }
