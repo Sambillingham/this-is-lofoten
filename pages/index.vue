@@ -711,7 +711,6 @@ export default {
   border-radius: 15px;
   overflow: hidden;
   border: none;
-  max-height: 80vh;
 }
 
 .contours-bg {
