@@ -222,10 +222,10 @@ export default {
     const map = new mapboxgl.Map({
       container: 'mapContainer',
       style: 'mapbox://styles/sbillinghammap/ckbqjqxcv51i31in0vqbxk82p',
-      center: [14.5682, 68.2343],
+      center: [13.9, 68.2],
       zoom: 6.2,
       maxBounds: [
-        [11, 66.6],
+        [11.2, 66.6],
         [16, 69.5],
       ],
     })
