@@ -648,6 +648,8 @@ export default {
   overflow: hidden;
   position: relative;
   margin-bottom: 1rem;
+  border-radius: 15px;
+  background: #2a4082;
 }
 
 .intro-header-bg {
@@ -681,10 +683,6 @@ export default {
   .intro__container {
     max-height: 100vh;
   }
-  .intro header {
-    padding: 0 0 3rem;
-    margin-bottom: 0;
-  }
   .intro h1 {
     margin: 3rem 0.5rem 5rem;
   }
@@ -700,6 +698,7 @@ export default {
   }
   .intro header {
     padding: 0 0 2rem;
+    background: transparent;
   }
   .intro video {
     display: block;
@@ -796,7 +795,7 @@ export default {
   border-radius: 15px;
   background: #bdfff0;
   position: relative;
-  margin: 1rem 0.5rem 3rem;
+  margin: 1rem 0.5rem 1rem;
 }
 
 .intro__description {
