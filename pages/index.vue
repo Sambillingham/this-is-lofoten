@@ -649,6 +649,7 @@ export default {
 .intro header {
   overflow: hidden;
   position: relative;
+  margin-bottom: 1rem;
 }
 
 .intro-header-bg {
@@ -684,6 +685,10 @@ export default {
   }
   .intro header {
     padding: 0 0 3rem;
+    margin-bottom: 0;
+  }
+  .intro h1 {
+    margin: 3rem 0.5rem 5rem;
   }
   .intro__description p {
     margin-bottom: 2rem;
@@ -789,7 +794,7 @@ export default {
   border-radius: 15px;
   background: #bdfff0;
   position: relative;
-  margin: 3rem 0.5rem 5rem;
+  margin: 1rem 0.5rem 3rem;
 }
 
 .intro__description {
