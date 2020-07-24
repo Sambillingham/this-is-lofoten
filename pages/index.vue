@@ -649,7 +649,6 @@ export default {
 .intro header {
   overflow: hidden;
   position: relative;
-  padding: 0 0 3rem;
 }
 
 .intro-header-bg {
@@ -679,6 +678,18 @@ export default {
   opacity: 0;
 }
 
+@media screen and (min-width: 360px) {
+  .intro__container {
+    max-height: 100vh;
+  }
+  .intro header {
+    padding: 0 0 3rem;
+  }
+  .intro__description p {
+    margin-bottom: 2rem;
+  }
+}
+
 @media screen and (min-width: 900px) {
   .intro header {
     padding: 0 0 2rem;
@@ -700,6 +711,7 @@ export default {
   border-radius: 15px;
   overflow: hidden;
   border: none;
+  max-height: 80vh;
 }
 
 .contours-bg {
@@ -778,7 +790,7 @@ export default {
   border-radius: 15px;
   background: #bdfff0;
   position: relative;
-  margin: 3rem 1rem 5rem;
+  margin: 3rem 0.5rem 5rem;
 }
 
 .intro__description {
@@ -788,7 +800,7 @@ export default {
 }
 
 .intro__description p {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 1.1rem;
   color: #2a4082;
 }
