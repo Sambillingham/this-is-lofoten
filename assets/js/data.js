@@ -150,6 +150,75 @@ export const videoData = [
     videoID: 'yEZxd_Az8Oo',
     categories: ['Vågan', 'Summer', 'Activites', 'Aerials'],
   },
+  {
+    coordinates: [13.075512, 67.935668],
+    title: 'Classic photo spot Reine',
+    short_title: 'Photo spot',
+    description:
+      'Enjoy this classic photo spot in Reine. Please remember that this is private property if you ever want to go here. So please ask for permission before entering!',
+    thumbnail: 'reine.jpg',
+    videoID: 'JEKi9D93qk0',
+    categories: ['Moskenes', 'Winter', 'Relaxing'],
+  },
+  {
+    coordinates: [14.317625, 68.194366],
+    title: 'Rock Climbing in Lofoten',
+    short_title: 'Rock Climbing',
+    description:
+      'Rock climbing	Experience this Classic climbing route in Kalle, Lofoten. Its called Rom og Cola, and goes up the Småkallan Mountain (418 meters above sea level). Warning! Not for people with fear of heights!',
+    thumbnail: 'climb-lofo.jpg',
+    videoID: 'T_0h3KY1x_4',
+    categories: ['Austvågøy', 'Summer', 'Activites'],
+  },
+  {
+    coordinates: [14.329178, 68.182004],
+    title: 'Relaxing in Paradise',
+    short_title: 'Paradise',
+    description:
+      'This place is actually called Paradise, because it is! Relax your mind while enjoying the view towards Vågakallen.',
+    thumbnail: 'paradise.jpg',
+    videoID: 'ZHu3-qfLK9Y',
+    categories: ['Austvågøy', 'Summer', 'Relaxing'],
+  },
+  {
+    coordinates: [14.485752, 68.208096],
+    title: 'Kabelvåg Harbour',
+    short_title: 'Kabelvåg Harbour',
+    description:
+      'Fly over the harbour and breakwater in Kabelvåg. Looking down at the clear ocean.',
+    thumbnail: 'kabelvag-harbour.jpg',
+    videoID: '8O4lmQlpCis',
+    categories: ['Austvågøy', 'Summer', 'Aerial'],
+  },
+  {
+    coordinates: [13.105326, 67.941087],
+    title: 'Kayak paddling in Reine',
+    short_title: 'Kayak in Reine',
+    description:
+      'Enjoy the scenery in Reine with Reine Paddling (https://www.facebook.com/reinepaddling). This must be one of the nicest place in the world to go kayaking!',
+    thumbnail: 'kajakk.jpg',
+    videoID: '7CCl7fzL7wA',
+    categories: ['Moskenes', 'Summer', 'Aerial', 'Activities'],
+  },
+  {
+    coordinates: [13.522697, 68.210069],
+    title: 'Uttakleiv Aerial',
+    short_title: 'Uttakleiv Aerial',
+    description:
+      'Explore this popular bay, Uttakleiv on Vestvågøy in Lofoten from the air!',
+    thumbnail: 'utakleiv.jpg',
+    videoID: 'oPPLh27ZLBg',
+    categories: ['Vestvågøy', 'Summer', 'Aerial'],
+  },
+  {
+    coordinates: [13.934681, 68.273023],
+    title: 'Magic summer night in Alstad',
+    short_title: 'Magic summer night',
+    description: 'Fly over the calm waters in Alstad, Lofoten.',
+    thumbnail: 'alstad.jpg',
+    videoID: 'WhGc_Ko6A_0',
+    categories: ['Vestvågøy', 'Summer', 'Aerial'],
+  },
 ]
 
 export const categories = [
