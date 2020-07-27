@@ -150,12 +150,16 @@ export default {
       animateOutIntro: false,
       drawerCategories: [],
       drawerOculusLink: '',
+      initialOpen: this.$route.query.vid,
     }
   },
 
   computed: {
     isMobile() {
       return this.windowWidth <= 900
+    },
+    initialDrawerContent() {
+      return videoData.find((v) => v.videoID === this.initialOpen)
     },
   },
 
@@ -169,6 +173,7 @@ export default {
       this.drawerCoords = ''
       this.drawerCategories = []
       this.drawerOculusLink = ''
+      history.pushState({}, null, `/`)
     },
 
     checkCookie() {
@@ -187,6 +192,25 @@ export default {
       setTimeout(() => {
         this.initialLoad = false
       }, 500)
+    },
+
+    autoLoadMapPanel(map) {
+      this.drawerTitle = this.initialDrawerContent.title
+      this.drawerDescription = this.initialDrawerContent.description
+      this.drawerThumbnail = this.initialDrawerContent.thumbnail
+      this.drawerVideoID = this.initialDrawerContent.videoID
+      this.drawerOpen = true
+      this.drawerCoords = `${this.initialDrawerContent.coordinates[1].toFixed(
+        5,
+      )}° N  ${this.initialDrawerContent.coordinates[0].toFixed(5)}° W`
+
+      this.drawerCategories = this.initialDrawerContent.categories
+      this.drawerOculusLink = this.initialDrawerContent.oculus || ''
+      history.pushState(
+        {},
+        null,
+        `/location/${this.initialDrawerContent.videoID}`,
+      )
     },
   },
 
@@ -466,9 +490,24 @@ export default {
             speed: 1.5,
             offset: [...offset],
           })
+
+          history.pushState({}, null, `/location/${feature.properties.videoID}`)
         })
-      })
-    })
+        if (app.initialOpen) {
+          app.autoLoadMapPanel()
+
+          const offset = app.isMobile ? [0, -220] : [-150, 0]
+
+          console.log(app.initialDrawerContent.coordinates)
+          map.flyTo({
+            center: app.initialDrawerContent.coordinates,
+            zoom: 11,
+            speed: 1.5,
+            offset: [...offset],
+          })
+        }
+      }) // load pin image
+    }) // end map load
   },
 }
 </script>
