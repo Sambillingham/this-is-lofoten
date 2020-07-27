@@ -46,6 +46,9 @@
     </div>
 
     <Navbar />
+    <div v-if="isMobile" class="mobile-banner-2">
+      This Is Lofoten
+    </div>
     <div v-if="isMobile" class="mobile-banner">
       This Is Lofoten
     </div>
@@ -661,6 +664,24 @@ export default {
   color: #2a4082;
   padding: 0.22rem;
   border-radius: 5px;
+}
+
+.mobile-banner-2 {
+  width: calc(100% - 0.7rem);
+  left: 0.35rem;
+  left: 0.35rem;
+  position: fixed;
+  z-index: 100;
+  border-radius: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: #fafafa;
+  background: #2a4082;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-banner {
