@@ -46,10 +46,10 @@
     </div>
 
     <Navbar />
-    <div id="mapContainer" class="map"></div>
     <div v-if="isMobile" class="mobile-banner">
       This Is Lofoten
     </div>
+    <div id="mapContainer" class="map"></div>
     <div
       v-if="!initialLoad"
       :class="{ 'drawer--is-active': drawerOpen }"
@@ -665,9 +665,9 @@ export default {
 
 .mobile-banner {
   width: calc(100% - 0.7rem);
-  top: 0.35rem;
+  /* top: 0.35rem; */
   position: fixed;
-  left: 0.35rem;
+  /* left: 0.35rem; */
   z-index: 1;
   border-radius: 15px;
   text-align: center;
