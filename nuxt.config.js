@@ -13,7 +13,7 @@ export default {
         name: 'description',
         content:
           process.env.npm_package_description ||
-          ' Immerse yourself in the beauty of the Lofoten Islands in 360° virtual reality. Discover the area through the map and choose your favourite place, activity or season.',
+          'Immerse yourself in the beauty of the Lofoten Islands in 360° virtual reality. Discover the area through the map and choose your favourite place, activity or season.',
       },
       {
         hid: 'og:url',
