@@ -1,7 +1,5 @@
 <template>
-  <div>
-    {{ content }}
-  </div>
+  <div></div>
 </template>
 
 <script>
@@ -18,12 +16,9 @@ export default {
     content() {
       return videoData.find((v) => v.videoID === this.vid)
     },
-    isMobile() {
-      return this.windowWidth <= 900
-    },
   },
 
-  mounted() {
+  created() {
     this.$router.replace({
       path: '/',
       query: { 'vid': this.vid },
