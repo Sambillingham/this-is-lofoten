@@ -727,7 +727,7 @@ export default {
   left: 0;
   z-index: 10000;
   background: #fff;
-  transition: all 300ms;
+  transition: opacity 300ms;
   opacity: 1;
   display: flex;
   justify-content: center;
