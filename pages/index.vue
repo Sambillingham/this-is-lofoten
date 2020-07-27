@@ -566,7 +566,7 @@ export default {
           hid: 'og:url',
           property: 'og:url',
           content: this.initialOpen
-            ? `https://thisislofoten.com/location/${this.initialDrawerContent.videoID}`
+            ? `https://thisislofoten.com?vid=${this.initialDrawerContent.videoID}`
             : `https://thisislofoten.com`,
         },
         {
