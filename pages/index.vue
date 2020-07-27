@@ -665,9 +665,8 @@ export default {
 
 .mobile-banner {
   width: calc(100% - 0.7rem);
-  /* top: 0.35rem; */
+  top: 0;
   position: fixed;
-  /* left: 0.35rem; */
   z-index: 1;
   border-radius: 15px;
   text-align: center;
@@ -679,6 +678,7 @@ export default {
   color: #fafafa;
   background: #2a4082;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  transform: translate(0.35rem, 0.35rem);
 }
 
 .iframe-container {
