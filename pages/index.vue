@@ -524,7 +524,6 @@ export default {
 
           const offset = app.isMobile ? [0, -220] : [-150, 0]
 
-          console.log(app.initialDrawerContent.coordinates)
           map.flyTo({
             center: app.initialDrawerContent.coordinates,
             zoom: 11,
@@ -534,6 +533,51 @@ export default {
         }
       }) // load pin image
     }) // end map load
+  },
+  head() {
+    return {
+      title: this.initialOpen
+        ? this.initialDrawerContent.title
+        : 'This Is Lofoten',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.initialOpen
+            ? this.initialDrawerContent.description
+            : 'Immerse yourself in the beauty of the Lofoten Islands in 360° virtual reality. Discover the area through the map and choose your favourite place, activity or season.',
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.initialOpen
+            ? this.initialDrawerContent.title
+            : 'This Is Lofoten',
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.initialOpen
+            ? this.initialDrawerContent.description
+            : 'Immerse yourself in the beauty of the Lofoten Islands in 360° virtual reality. Discover the area through the map and choose your favourite place, activity or season.',
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: this.initialOpen
+            ? `${this.BASE_URL}/location/${this.initialDrawerContent.videoID}`
+            : `https://thisislofoten.com`,
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.initialOpen
+            ? `https://thisislofoten.com${require(`~/assets/img/${this.initialDrawerContent.thumbnail}`)}`
+            : 'https://thisislofoten.com/social.jpg',
+        },
+      ],
+    }
   },
 }
 </script>
