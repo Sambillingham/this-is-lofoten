@@ -115,7 +115,7 @@
           :href="
             `https://www.facebook.com/sharer/sharer.php?u=https://thisislofoten.com/location/${drawerVideoID}`
           "
-          onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800,width=500');return false;"
+          onclick="javascript:window.open(this.href, 'Facebook Sharing', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800,width=500');return false;"
           target="_blank"
           title="Share on Facebook"
           class="w-50 block text-white font-bold py-2 px-4 rounded-full text-center fb-btn mb-2"
@@ -539,8 +539,6 @@ export default {
 .page {
   width: 100%;
   height: 100%;
-  min-height: 100vh;
-  min-width: 100vw;
 }
 
 .map {
