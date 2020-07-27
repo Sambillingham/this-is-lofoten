@@ -668,8 +668,8 @@ export default {
 
 .mobile-banner-2 {
   width: calc(100% - 0.7rem);
-  left: 0.35rem;
-  top: 0.35rem;
+  left: 0.35rem !important;
+  top: 0.35rem !important;
   position: fixed;
   z-index: 100;
   border-radius: 15px;
