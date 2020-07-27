@@ -59,7 +59,7 @@ export default {
           hid: 'og:image',
           property: 'og:image',
           content:
-            this.BASE_URL + require(`~/assets/img/${this.content.description}`),
+            this.BASE_URL + require(`~/assets/img/${this.content.thumbnail}`),
         },
       ],
     }

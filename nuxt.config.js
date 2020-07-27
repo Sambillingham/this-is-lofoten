@@ -16,17 +16,24 @@ export default {
           ' Immerse yourself in the beauty of the Lofoten Islands in 360° virtual reality. Discover the area through the map and choose your favourite place, activity or season.',
       },
       {
+        hid: 'og:url',
         name: 'og:url',
         content: `https://thisislofoten.com`,
       },
       { name: 'og:type', content: 'website' },
-      { name: 'og:title', content: 'This is Lofoten' },
       {
+        hid: 'og:title',
+        name: 'og:title',
+        content: 'This is Lofoten',
+      },
+      {
+        hid: 'og:description',
         name: 'og:description',
         content:
           'Immerse yourself in the beauty of the Lofoten Islands in 360° virtual reality. Discover the area through the map and choose your favourite place, activity or season.',
       },
       {
+        hid: 'og:image',
         name: 'og:image',
         content: 'https://thisislofoten.com/social.jpg',
       },
