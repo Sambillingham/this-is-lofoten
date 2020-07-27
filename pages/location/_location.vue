@@ -48,7 +48,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: this.BASE_URL + this.$route.path,
+          content: 'https://thisislofoten.com' + this.$route.path,
         },
         {
           hid: 'og:image',
