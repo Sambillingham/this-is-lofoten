@@ -669,7 +669,7 @@ export default {
 .mobile-banner-2 {
   width: calc(100% - 0.7rem);
   left: 0.35rem;
-  left: 0.35rem;
+  top: 0.35rem;
   position: fixed;
   z-index: 100;
   border-radius: 15px;
@@ -698,7 +698,6 @@ export default {
   padding: 1rem;
   font-size: 0.875rem;
   color: #fafafa;
-  background: #2a4082;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 
