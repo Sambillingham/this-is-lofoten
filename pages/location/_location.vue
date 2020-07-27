@@ -58,8 +58,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content:
-            this.BASE_URL + require(`~/assets/img/${this.content.thumbnail}`),
+          content: `https://thisislofoten.com${require(`~/assets/img/${this.content.thumbnail}`)}`,
         },
       ],
     }
