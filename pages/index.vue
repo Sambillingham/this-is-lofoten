@@ -46,6 +46,9 @@
     </div>
 
     <Navbar />
+    <div v-if="isMobile" class="mobile-banner-2">
+      This Is Lofoten
+    </div>
     <div v-if="isMobile" class="mobile-banner">
       This Is Lofoten
     </div>
@@ -106,10 +109,33 @@
         <a
           target="_blank"
           v-if="drawerOculusLink"
-          class="w-50 block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full text-center"
+          class="w-50 block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full text-center mb-2"
           :href="drawerOculusLink"
         >
           Save To Oculus
+        </a>
+        <a
+          :href="
+            `https://www.facebook.com/sharer/sharer.php?u=https://thisislofoten.com/location/${drawerVideoID}`
+          "
+          onclick="javascript:window.open(this.href, 'Facebook Sharing', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800,width=500');return false;"
+          target="_blank"
+          title="Share on Facebook"
+          class="w-50 block text-white font-bold py-2 px-4 rounded-full text-center fb-btn mb-2"
+        >
+          <svg
+            height="24px"
+            width="24px"
+            role="img"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Facebook icon</title>
+            <path
+              d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z"
+            />
+          </svg>
+          Share on Facebook
         </a>
         <span @click="closeDrawer()" class="close cursor-pointer">&times;</span>
       </div>
@@ -150,12 +176,16 @@ export default {
       animateOutIntro: false,
       drawerCategories: [],
       drawerOculusLink: '',
+      initialOpen: this.$route.query.vid,
     }
   },
 
   computed: {
     isMobile() {
       return this.windowWidth <= 900
+    },
+    initialDrawerContent() {
+      return videoData.find((v) => v.videoID === this.initialOpen)
     },
   },
 
@@ -169,6 +199,7 @@ export default {
       this.drawerCoords = ''
       this.drawerCategories = []
       this.drawerOculusLink = ''
+      history.pushState({}, null, `/`)
     },
 
     checkCookie() {
@@ -187,6 +218,25 @@ export default {
       setTimeout(() => {
         this.initialLoad = false
       }, 500)
+    },
+
+    autoLoadMapPanel(map) {
+      this.drawerTitle = this.initialDrawerContent.title
+      this.drawerDescription = this.initialDrawerContent.description
+      this.drawerThumbnail = this.initialDrawerContent.thumbnail
+      this.drawerVideoID = this.initialDrawerContent.videoID
+      this.drawerOpen = true
+      this.drawerCoords = `${this.initialDrawerContent.coordinates[1].toFixed(
+        5,
+      )}° N  ${this.initialDrawerContent.coordinates[0].toFixed(5)}° W`
+
+      this.drawerCategories = this.initialDrawerContent.categories
+      this.drawerOculusLink = this.initialDrawerContent.oculus || ''
+      history.pushState(
+        {},
+        null,
+        `/location/${this.initialDrawerContent.videoID}`,
+      )
     },
   },
 
@@ -466,9 +516,24 @@ export default {
             speed: 1.5,
             offset: [...offset],
           })
+
+          history.pushState({}, null, `/location/${feature.properties.videoID}`)
         })
-      })
-    })
+        if (app.initialOpen) {
+          app.autoLoadMapPanel()
+
+          const offset = app.isMobile ? [0, -220] : [-150, 0]
+
+          console.log(app.initialDrawerContent.coordinates)
+          map.flyTo({
+            center: app.initialDrawerContent.coordinates,
+            zoom: 11,
+            speed: 1.5,
+            offset: [...offset],
+          })
+        }
+      }) // load pin image
+    }) // end map load
   },
 }
 </script>
@@ -477,14 +542,13 @@ export default {
 .page {
   width: 100%;
   height: 100%;
-  min-height: 100vh;
-  min-width: 100vw;
+  position: relative;
 }
 
 .map {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
 }
@@ -602,12 +666,12 @@ export default {
   border-radius: 5px;
 }
 
-.mobile-banner {
+.mobile-banner-2 {
   width: calc(100% - 0.7rem);
-  top: 0.35rem;
+  left: 0.35rem !important;
+  top: 0.35rem !important;
   position: fixed;
-  left: 0.35rem;
-  z-index: 1;
+  z-index: 100;
   border-radius: 15px;
   text-align: center;
   text-transform: uppercase;
@@ -617,6 +681,23 @@ export default {
   font-size: 0.875rem;
   color: #fafafa;
   background: #2a4082;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-banner {
+  width: calc(100% - 0.7rem);
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1;
+  border-radius: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: #fafafa;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -645,7 +726,7 @@ export default {
   left: 0;
   z-index: 10000;
   background: #fff;
-  transition: all 300ms;
+  transition: opacity 300ms;
   opacity: 1;
   display: flex;
   justify-content: center;
@@ -861,5 +942,18 @@ export default {
 .intro .btn:hover {
   background: #152965;
   box-shadow: 0 5px 10px rgba(50, 50, 50, 0.2);
+}
+.fb-btn {
+  background: #1877f2;
+  cursor: pointer;
+  position: relative;
+}
+
+.fb-btn svg {
+  fill: #fff;
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 </style>
