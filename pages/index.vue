@@ -537,7 +537,9 @@ export default {
   head() {
     return {
       title: this.initialOpen
-        ? this.initialDrawerContent.title
+        ? this.initialDrawerContent.title.replace(/\b\w/g, (l) =>
+            l.toUpperCase(),
+          )
         : 'This Is Lofoten',
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
@@ -552,7 +554,9 @@ export default {
           hid: 'og:title',
           property: 'og:title',
           content: this.initialOpen
-            ? this.initialDrawerContent.title
+            ? this.initialDrawerContent.title.replace(/\b\w/g, (l) =>
+                l.toUpperCase(),
+              )
             : 'This Is Lofoten',
         },
         {
