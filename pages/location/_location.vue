@@ -24,10 +24,10 @@ export default {
   },
 
   mounted() {
-    // this.$router.replace({
-    //   path: '/',
-    //   query: { 'vid': this.vid },
-    // })
+    this.$router.replace({
+      path: '/',
+      query: { 'vid': this.vid },
+    })
   },
 
   head() {
