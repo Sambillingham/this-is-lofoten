@@ -508,7 +508,7 @@ export default {
           app.drawerCategories = JSON.parse(feature.properties.categories)
           app.drawerOculusLink = feature.properties.oculus || ''
 
-          const offset = app.isMobile ? [0, -220] : [-150, 0]
+          const offset = app.isMobile ? [0, -225] : [-150, 0]
 
           map.flyTo({
             center: feature.geometry.coordinates,
@@ -522,7 +522,7 @@ export default {
         if (app.initialOpen) {
           app.autoLoadMapPanel()
 
-          const offset = app.isMobile ? [0, -220] : [-150, 0]
+          const offset = app.isMobile ? [0, -225] : [-150, 0]
 
           map.flyTo({
             center: app.initialDrawerContent.coordinates,
