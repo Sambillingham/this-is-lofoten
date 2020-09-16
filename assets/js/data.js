@@ -219,6 +219,105 @@ export const videoData = [
     videoID: 'WhGc_Ko6A_0',
     categories: ['Vestvågøy', 'Summer', 'Aerial'],
   },
+  {
+    coordinates: [13.189931, 68.084232],
+    title: 'Fredvang bridges aerial',
+    short_title: 'Fredvang bridges',
+    description:
+      'Fly over the Fredvang bridges close to Ramberg with the pointy Volandstinden in front.',
+    thumbnail: 'fredvang-bridges.jpg',
+    videoID: 'WdKBBmRMhrw',
+    categories: ['Moskenes', 'Flakstadøy', 'Summer', 'Aerial'],
+  },
+  {
+    coordinates: [14.513664, 68.246924],
+    title: 'Snowboarding on Kongstind',
+    short_title: 'Snowboarding',
+    description:
+      'Feel the stoke from the snowboarders and skiers at the Kongstind Alpine center!',
+    thumbnail: 'snowboarding-kongstind.jpg',
+    videoID: 'R-n1P3QTvpw',
+    categories: ['Vågan', 'Winter', 'Activities'],
+  },
+  {
+    coordinates: [13.086559, 67.928978],
+    title: 'Reine Winter',
+    short_title: 'Reine Winter',
+    description:
+      'Experience the view from the sea level in Reine. Looking up on Reinebringen',
+    thumbnail: 'reine-winter.jpg',
+    videoID: '4OiD_RcFKqA',
+    categories: ['Moskenes', 'Winter', 'Relaxing'],
+  },
+  {
+    coordinates: [13.133421, 67.945056],
+    title: 'Hamnøy Cod Drying',
+    short_title: 'Cod Drying',
+    description:
+      'Get a close (!) view of the cod heads on the drying racks in Reine.',
+    thumbnail: 'cod-drying-hamnøy.jpg',
+    videoID: 'ip1ZyeB1Img',
+    categories: ['Moskenes', 'Winter', 'Relaxing'],
+  },
+  {
+    coordinates: [13.136212, 67.947014],
+    title: 'Hamnøy Harbour',
+    short_title: 'Hamnøy Harbour',
+    description:
+      'Look out on the harbour in Hamnøy and towards the majestic Olstinden with fishing boats in front.',
+    thumbnail: 'hamnøy-harbour.jpg',
+    videoID: 'r7IloYPqTSk',
+    categories: ['Moskenes', 'Winter', 'Relaxing'],
+  },
+  {
+    coordinates: [14.341723, 68.210709],
+    title: 'Hopspollen with dancing fog',
+    short_title: 'Hopspollen Fog',
+    description:
+      'See the fog dancing over Hopspollen with Vågakallen in the background.',
+    thumbnail: 'hopspollen-fog.jpg',
+    videoID: 'OKxxS2FhwkM',
+    categories: ['Vågan', 'Summer', 'Relaxing'],
+  },
+  {
+    coordinates: [14.741603, 68.191561],
+    title: 'Litlmolla Aerial',
+    short_title: 'Litlmolla Aerial',
+    description:
+      'Fly up close to Nonstinden on Litlmolla, with the green ocean underneath you. Looking down on the RIB from XXLofoten (https://www.xxlofoten.no/rib-safaris/)',
+    thumbnail: 'litlmolla.jpg',
+    videoID: 'BBd9CBQTi94',
+    categories: ['Vågan', 'Spring', 'Aerial'],
+  },
+  {
+    coordinates: [14.493749, 68.349942],
+    title: 'Nordpollen calm',
+    short_title: 'Nordpollen calm',
+    description:
+      'Relax with the surroundings of Nordpollen, the calm water and the sunset over Laukvika.',
+    thumbnail: 'nordpollen.jpg',
+    videoID: 'VxCA7L0d5qs',
+    categories: ['Vågan', 'Spring', 'Aerial'],
+  },
+  {
+    coordinates: [13.075955, 67.939835],
+    title: 'Reine Cod Fish Racks',
+    short_title: 'Reine Cod',
+    description:
+      'Watch the cod racks in Reine with Kirkfjorden in the background.',
+    thumbnail: 'reine-cod.jpg',
+    videoID: 'pPOV51SrbuU',
+    categories: ['Moskenes', 'Winter', 'Relaxing'],
+  },
+  {
+    coordinates: [68.314268, 14.56102],
+    title: 'Storvatnet Winter Aerial',
+    short_title: 'Storvatnet Winter',
+    description: 'Fly over Storvatnet covered with snow and ice.',
+    thumbnail: 'storvatnet-aerial.jpg',
+    videoID: 'DihOILJBB9o',
+    categories: ['Vågan', 'Winter', 'Aerials'],
+  },
 ]
 
 export const labelData = [
