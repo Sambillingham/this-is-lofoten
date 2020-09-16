@@ -610,7 +610,7 @@ export default {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  margin-top: 35vh;
+  margin-top: 15vh;
   min-height: 0;
   border-radius: 15px;
   overflow: hidden;
@@ -619,6 +619,17 @@ export default {
   background: rgba(253, 251, 251, 1);
 }
 
+@media screen and (min-width: 340px) {
+  .drawer {
+    margin-top: 25vh;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .drawer {
+    margin-top: 35vh;
+  }
+}
 .drawer a {
   font-weight: 700;
 }
