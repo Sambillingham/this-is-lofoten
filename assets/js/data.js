@@ -81,26 +81,26 @@ export const videoData = [
     videoID: 'b5igaFdqb7M',
     categories: ['Vestvågøy', 'Spring', 'Aerials'],
   },
-  // {
-  //   coordinates: [14.72544, 68.253901],
-  //   title: 'Eagle Safari - Risvær',
-  //   short_title: 'Eagle Safari',
-  //   description:
-  //     'XXLofoten offers RIB tours from Svolvær. <br/><br/> There is a large population of Sea eagles in Raftsundet, and one of the highlights is without doubt when a sea eagle circle a few meters above your head. <br/><br/> This is the eagle with the largest wing span in the world, up to 2,65 meters. Our guides have a high awareness on safety, and will make sure that you have a comfortable experience. Therefore, this tour is a good option for the whole family. <br/> <a class="font-bold" target="_blank" href="https://www.xxlofoten.no/zodiac-safari/">https://www.xxlofoten.no/zodiac-safari/</a>',
-  //   thumbnail: 'Eagle-safari-360-VR.jpg',
-  //   videoID: 'xtV0vW_e4wg',
-  //   categories: ['Vågan', 'Spring', 'Activites'],
-  // },
-  // {
-  //   coordinates: [14.681032, 68.323608],
-  //   title: 'Vestpollen aerial',
-  //   short_title: 'Vestpollen',
-  //   description:
-  //     'Enjoy this flight over the calm waters in Vestpollen with beautiful evening light.',
-  //   thumbnail: 'Eagle-safari-360-VR.jpg',
-  //   videoID: 'zJaMeS1Lt5Y',
-  //   categories: ['Vågan', 'Spring', 'Aerials'],
-  // },
+  {
+    coordinates: [14.72544, 68.253901],
+    title: 'Eagle Safari - Risvær',
+    short_title: 'Eagle Safari',
+    description:
+      'XXLofoten offers RIB tours from Svolvær. <br/><br/> There is a large population of Sea eagles in Raftsundet, and one of the highlights is without doubt when a sea eagle circle a few meters above your head. <br/><br/> This is the eagle with the largest wing span in the world, up to 2,65 meters. Our guides have a high awareness on safety, and will make sure that you have a comfortable experience. Therefore, this tour is a good option for the whole family. <br/> <a class="font-bold" target="_blank" href="https://www.xxlofoten.no/zodiac-safari/">https://www.xxlofoten.no/zodiac-safari/</a>',
+    thumbnail: 'Eagle-safari-360-VR.jpg',
+    videoID: 'GYeC8G_n2o8',
+    categories: ['Vågan', 'Spring', 'Activites'],
+  },
+  {
+    coordinates: [14.681032, 68.323608],
+    title: 'Vestpollen aerial',
+    short_title: 'Vestpollen',
+    description:
+      'Enjoy this flight over the calm waters in Vestpollen with beautiful evening light.',
+    thumbnail: 'Eagle-safari-360-VR.jpg',
+    videoID: 'J42fXLxyLMY',
+    categories: ['Vågan', 'Spring', 'Aerials'],
+  },
   {
     coordinates: [13.54661, 68.082691],
     title: 'Ballstad Aerial',
@@ -190,16 +190,16 @@ export const videoData = [
     videoID: 'rTdezEudgyE',
     categories: ['Austvågøy', 'Summer', 'Aerial'],
   },
-  // {
-  //   coordinates: [13.105326, 67.941087],
-  //   title: 'Kayak paddling in Reine',
-  //   short_title: 'Kayak in Reine',
-  //   description:
-  //     'Enjoy the scenery in Reine with Reine Paddling (https://www.facebook.com/reinepaddling). This must be one of the nicest place in the world to go kayaking!',
-  //   thumbnail: 'kajakk.jpg',
-  //   videoID: '7CCl7fzL7wA',
-  //   categories: ['Moskenes', 'Summer', 'Aerial', 'Activities'],
-  // },
+  {
+    coordinates: [13.105326, 67.941087],
+    title: 'Kayak paddling in Reine',
+    short_title: 'Kayak in Reine',
+    description:
+      'Enjoy the scenery in Reine with Reine Paddling (https://www.facebook.com/reinepaddling). This must be one of the nicest place in the world to go kayaking!',
+    thumbnail: 'kajakk.jpg',
+    videoID: 'KZuvxA-Jzr0',
+    categories: ['Moskenes', 'Summer', 'Aerial', 'Activities'],
+  },
   {
     coordinates: [13.522697, 68.210069],
     title: 'Uttakleiv Aerial',
