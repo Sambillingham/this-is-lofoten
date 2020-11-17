@@ -225,13 +225,13 @@ export default {
       this.drawerDescription = this.initialDrawerContent.description
       this.drawerThumbnail = this.initialDrawerContent.thumbnail
       this.drawerVideoID = this.initialDrawerContent.videoID
-      this.drawerOpen = true
       this.drawerCoords = `${this.initialDrawerContent.coordinates[1].toFixed(
         5,
       )}° N  ${this.initialDrawerContent.coordinates[0].toFixed(5)}° W`
 
       this.drawerCategories = this.initialDrawerContent.categories
       this.drawerOculusLink = this.initialDrawerContent.oculus || ''
+      this.drawerOpen = true
       history.pushState(
         {},
         null,
@@ -463,7 +463,7 @@ export default {
               if (err) return
               map.easeTo({
                 center: features[0].geometry.coordinates,
-                zoom: zoom + 0.5,
+                zoom,
                 speed: 1.5,
                 offset: [...offset],
               })
@@ -490,7 +490,7 @@ export default {
                 if (err) return
                 map.easeTo({
                   center: features[0].geometry.coordinates,
-                  zoom: zoom + 0.5,
+                  zoom,
                   speed: 1.5,
                 })
               })
@@ -500,7 +500,6 @@ export default {
           app.drawerDescription = feature.properties.description
           app.drawerThumbnail = feature.properties.thumbnail
           app.drawerVideoID = feature.properties.videoID
-          app.drawerOpen = true
           app.drawerCoords = `${feature.geometry.coordinates[1].toFixed(
             5,
           )}° N  ${feature.geometry.coordinates[0].toFixed(5)}° W`
@@ -512,9 +511,12 @@ export default {
 
           map.flyTo({
             center: feature.geometry.coordinates,
-            zoom: 11,
-            speed: 1.5,
+            zoom: 10,
+            speed: 2,
             offset: [...offset],
+          })
+          map.once('moveend', () => {
+            app.drawerOpen = true
           })
 
           history.pushState({}, null, `/location/${feature.properties.videoID}`)
@@ -526,8 +528,8 @@ export default {
 
           map.flyTo({
             center: app.initialDrawerContent.coordinates,
-            zoom: 11,
-            speed: 1.5,
+            zoom: 10,
+            speed: 2,
             offset: [...offset],
           })
         }
@@ -617,6 +619,7 @@ export default {
   position: relative;
   z-index: 100;
   background: rgba(253, 251, 251, 1);
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.15);
 }
 
 @media screen and (min-width: 340px) {
@@ -636,10 +639,8 @@ export default {
 
 .drawer--is-active {
   min-height: 65vh;
-  transition: transform 350ms ease-in-out;
-  transition-delay: 50ms;
+  transition: transform 300ms ease-in;
   transform: translateY(0);
-  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.15);
 }
 
 .contours-container {
@@ -680,11 +681,11 @@ export default {
     border-bottom-right-radius: 0;
     margin-top: 0;
     justify-content: flex-end;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   }
 
   .drawer--is-active {
     transform: translate(0, 0);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   }
 
   .contours-container {
