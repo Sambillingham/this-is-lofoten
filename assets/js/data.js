@@ -318,6 +318,15 @@ export const videoData = [
     videoID: 'nsKuvlaP1DY',
     categories: ['Vågan', 'Winter', 'Aerials'],
   },
+  {
+    coordinates: [68.286467, 13.864584],
+    title: 'Autumn sunset Tverrfjellet',
+    short_title: 'Autumn Tverrfjellet',
+    description: 'Watch the amazing autumn colours in this 360VR aerial from Tverffjellet.',
+    thumbnail: 'Tverrfjellet.jpg',
+    videoID: '9s3m8k4T7A',
+    categories: ['Vestvågøy', 'Autumn', 'Aerials'],
+  },
 ]
 
 export const labelData = [
