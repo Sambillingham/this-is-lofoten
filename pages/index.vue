@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <div id="map" class="map"></div>
     <div
       v-if="initialLoad"
       class="intro"
@@ -52,7 +53,6 @@
     <div v-if="isMobile" class="mobile-banner">
       This Is Lofoten
     </div>
-    <div id="mapContainer" class="map"></div>
     <div
       v-if="!initialLoad"
       :class="{ 'drawer--is-active': drawerOpen }"
@@ -270,7 +270,7 @@ export default {
     mapboxgl.accessToken = this.accessToken
 
     const map = new mapboxgl.Map({
-      container: 'mapContainer',
+      container: 'map',
       style: 'mapbox://styles/sbillinghammap/ckbqjqxcv51i31in0vqbxk82p',
       center: [13.9, 68.2],
       zoom: 6.2,
