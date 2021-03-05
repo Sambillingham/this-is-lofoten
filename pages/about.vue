@@ -137,13 +137,14 @@ h3 {
   flex-wrap: wrap;
   flex-direction: column;
 }
-.support-center {
+.support--center {
   justify-content: center;
 }
 .support img {
   max-width: 200px;
   max-width: 30%;
 }
+
 @media screen and (min-width: 900px) {
   .content-title {
     margin-left: 316px;
