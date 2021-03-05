@@ -143,6 +143,7 @@ h3 {
 .support img {
   max-width: 200px;
   max-width: 30%;
+  margin: auto;
 }
 
 @media screen and (min-width: 900px) {
