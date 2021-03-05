@@ -45,7 +45,7 @@
           </g>
         </svg>
 
-        <a href="matilto:post@lofotenfilm.com">post@lofotenfilm.com</a>
+        <a href="matilto:inge@lofotenfilm.com">inge@lofotenfilm.com</a>
       </p>
 
       <p>

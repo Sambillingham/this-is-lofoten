@@ -46,6 +46,18 @@
         you are on Oculus VR headset. Everything is uploaded on youtube, and you
         and you can find the playlists there as well.
       </p>
+      <div>
+        <h3>Supported By</h3>
+        <div class="support">
+          <img v-for="img in support" :src="img" />
+        </div>
+        <h3>In cooperation with</h3>
+        <div class="support support--center">
+          <a href="https://lofoten.info/Visitlofoten">
+            <img :src="require('~/assets/img/visit-lofoten.png')" />
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -56,6 +68,15 @@ import Navbar from '@/components/Navbar'
 export default {
   components: {
     Navbar,
+  },
+  data() {
+    return {
+      support: [
+        require('~/assets/img/inn-norge.jpg'),
+        require('~/assets/img/vestvagoy-kommune-logo.png'),
+        require('~/assets/img/vgan-kommune.png'),
+      ],
+    }
   },
 }
 </script>
@@ -99,6 +120,30 @@ a {
   font-weight: 700;
   color: #2a4082;
 }
+
+h3 {
+  margin: 4rem 0 2rem;
+  font-weight: 600;
+  color: #2a4082;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.support {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.support-center {
+  justify-content: center;
+}
+.support img {
+  max-width: 200px;
+  max-width: 30%;
+}
 @media screen and (min-width: 900px) {
   .content-title {
     margin-left: 316px;
@@ -116,6 +161,9 @@ a {
     margin: 0;
     border-radius: 0;
     border-bottom-left-radius: 15px;
+  }
+  .support {
+    flex-direction: row;
   }
 }
 </style>
