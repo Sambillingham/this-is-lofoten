@@ -310,7 +310,7 @@ export const videoData = [
     categories: ['Moskenes', 'Winter', 'Relaxing'],
   },
   {
-    coordinates: [68.314268, 14.56102],
+    coordinates: [14.56102, 68.314268],
     title: 'Storvatnet Winter Aerial',
     short_title: 'Storvatnet Winter',
     description: 'Fly over Storvatnet covered with snow and ice.',
@@ -319,7 +319,7 @@ export const videoData = [
     categories: ['Vågan', 'Winter', 'Aerials'],
   },
   {
-    coordinates: [68.286467, 13.864584],
+    coordinates: [13.864584, 68.286467],
     title: 'Autumn sunset Tverrfjellet',
     short_title: 'Autumn Tverrfjellet',
     description:
@@ -327,6 +327,160 @@ export const videoData = [
     thumbnail: 'Tverrfjellet.jpg',
     videoID: '9s3m8k4T7A',
     categories: ['Vestvågøy', 'Autumn', 'Aerials'],
+  },
+  {
+    coordinates: [13.578905, 68.267847],
+    title: 'Unstad Surfing',
+    short_title: 'Unstad Surfing',
+    description:
+      'Check out the waves in Unstad, as we join the surfers, flying above the waves.',
+    thumbnail: '034_facebook.png',
+    videoID: 'LaQIH0AI7jc',
+    categories: ['Vestvågøy', 'Autumn', 'Aerials'],
+    oculus:
+      'http://www.oculus.com/experiences/media/291491408930952/706900469971436/',
+  },
+  {
+    coordinates: [14.428789, 68.207997],
+    title: 'Skårungen outside Kabelvåg',
+    short_title: 'Skårungen Camping',
+    description:
+      'Fly over Skårungen Camping and check the view of Vågakallen mountain.',
+    thumbnail: '035_facebook.png',
+    videoID: 'IuCGLKo0pFA',
+    categories: ['Vågan', 'Summer', 'Aerials'],
+    https: 'www.oculus.com/experiences/media/291491408930952/294588341954029/',
+  },
+  {
+    coordinates: [14.206337, 68.154669],
+    title: 'Christmas over Henningsvær',
+    short_title: 'Christmas Henningsvær',
+    description:
+      'It`s Christmas time and we got this amazing light around us! Enjoy this flight above Henningsvær.',
+    thumbnail: '036_facebook.png',
+    videoID: 'vJ8wDeSG8_8',
+    categories: ['Vågan', 'Winter', 'Aerials'],
+    https: 'www.oculus.com/experiences/media/291491408930952/294588341954029/',
+  },
+  {
+    coordinates: [14.583389, 68.243684],
+    title: 'FPV Drone Svolværgeita',
+    short_title: 'FPV Svolværgeita',
+    description:
+      'Fasten your seatbelts and let`s go flying up the Svolvær goat on a FPV drone. Warning! This video might make you feel uncomfortable and dizzy!',
+    thumbnail: '037_facebook.png',
+    videoID: '9Y5MYQALC-Q',
+    categories: ['Vågan', 'Winter', 'Aerials'],
+    https:
+      'https://www.oculus.com/experiences/media/291491408930952/770910013505244/',
+  },
+  {
+    coordinates: [14.660212, 68.164383],
+    title: 'RIB Skrova harbour',
+    short_title: 'RIB Skrova',
+    description:
+      'Watch as we enter Skrova harbour from Vestfjorden with XXLofoten RIB.',
+    thumbnail: '038_facebook.png',
+    videoID: 'GJ9NWCeTUwk',
+    categories: ['Vågan', 'Spring'],
+    https:
+      'https://www.oculus.com/experiences/media/291491408930952/395899348370947/',
+  },
+  {
+    coordinates: [14.209533, 68.155581],
+    title: 'RIB Henningsvær harbour',
+    short_title: 'RIB Henningsvær',
+    description:
+      'Henningsvær harbour has lots of space for fishing boats during the fishing season. Enjoy the view from the RIB driving trough it in summer.',
+    thumbnail: '039_facebook.png',
+    videoID: 'giErGb8oZvE',
+    categories: ['Vågan', 'Spring'],
+    https:
+      'https://www.oculus.com/experiences/media/291491408930952/228191218910815/',
+  },
+  {
+    coordinates: [14.390959, 68.235502],
+    title: 'Varden mountaintop - snowboarding',
+    short_title: 'Varden snowboarding',
+    description:
+      'Enjoy the view from the Varden mountaintop, then feel the rush as you go snowboarding down.',
+    thumbnail: '040_facebook.png',
+    videoID: 'XB7f6TcKEcM',
+    categories: ['Vågan', 'Winter', 'Activies'],
+    https:
+      'https://www.oculus.com/experiences/media/291491408930952/245029490368715/',
+  },
+  {
+    coordinates: [14.394259, 68.218052],
+    title: 'FPV Kabelvåg',
+    short_title: 'FPV Kabelvåg',
+    description:
+      'See the view, flying above this mountaintop in Kabelvåg, then experience diving down full speed with the FPV drone. An extreme VR experience!!',
+    thumbnail: '042_facebook.png',
+    videoID: 'seV_BrGxl4s',
+    categories: ['Vågan', 'Winter', 'Aerials'],
+    https:
+      'https://www.oculus.com/experiences/media/291491408930952/430570291540506/',
+  },
+  {
+    coordinates: [14.48348, 68.215703],
+    title: 'The Lofoten Cathedral Aerial',
+    short_title: 'Lofoten Cathedral',
+    description:
+      'Check out the stunning Cathedral in Kabelvåg, build in 1898. The biggest wooden church north of Trondheim, built to accommodate all the fishermen who came to Kabelvåg each season for the annual fishing.',
+    thumbnail: '043_facebook.png',
+    videoID: 'C0xvKhtxwfw',
+    categories: ['Vågan', 'Winter', 'Aerials'],
+    https:
+      'https://www.oculus.com/experiences/media/291491408930952/490856742327819/',
+  },
+  {
+    coordinates: [14.344621, 68.201068],
+    title: 'Hopen Winter Fog Aerial',
+    short_title: 'Hopen Winter Fog',
+    description:
+      'Fly over Hopen in winter, where mist has formed above the water-surface, the mountains is covered with snow and the sun has just risen above the horizon.',
+    thumbnail: '044_facebook.png',
+    videoID: 'uKlyMKxbocU',
+    categories: ['Vågan', 'Winter', 'Aerials'],
+    https:
+      'https://www.oculus.com/experiences/media/291491408930952/227151559090652/',
+  },
+  {
+    coordinates: [13.176798, 68.022997],
+    title: 'Kåkersundet aerial  ',
+    short_title: 'Kåkersundet',
+    description:
+      'Winter in Kråkersundet, where a lone fishingboat returns from Vestfjorden.',
+    thumbnail: '046_facebook.png',
+    videoID: 'lsICTle9Da4',
+    categories: ['Moskenes', 'Winter', 'Aerials'],
+    https:
+      'https://www.oculus.com/experiences/media/291491408930952/708138446533606/',
+  },
+  {
+    coordinates: [13.349528, 68.033702],
+    title: 'Nusfjord aerial',
+    short_title: 'Nusfjord',
+    description:
+      'A beautiful winterday in Nausfjord, with the sun on the horizon and the rorbu cottages covered in snow.',
+    thumbnail: '047_facebook.png',
+    videoID: 'guOflqRNJ3I',
+    categories: ['Flakstad', 'Winter', 'Aerials'],
+    https:
+      'https://www.oculus.com/experiences/media/291491408930952/1317283505316573/',
+  },
+  {
+    coordinates: [13.32949, 68.080888],
+    title: 'Flakstadpollen Aerial',
+    short_title: 'Flakstadpollen ',
+    description:
+      'See the shallow waters in Flakstadpollen, with the beautiful mountain-range in the background',
+    thumbnail: '048_facebook.png',
+    videoID: 'a5qKrXhqBuY',
+    categories: ['Flakstad', 'Winter', 'Aerials'],
+    https:
+      'https://www.oculus.com/experiences/media/291491408930952/2776041639377300/',
   },
 ]
 
