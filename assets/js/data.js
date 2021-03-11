@@ -349,7 +349,7 @@ export const videoData = [
     thumbnail: '035_facebook.png',
     videoID: 'IuCGLKo0pFA',
     categories: ['Vågan', 'Summer', 'Aerials'],
-    https: 'www.oculus.com/experiences/media/291491408930952/294588341954029/',
+    oculus: 'www.oculus.com/experiences/media/291491408930952/294588341954029/',
   },
   {
     coordinates: [14.206337, 68.154669],
@@ -360,7 +360,7 @@ export const videoData = [
     thumbnail: '036_facebook.png',
     videoID: 'vJ8wDeSG8_8',
     categories: ['Vågan', 'Winter', 'Aerials'],
-    https: 'www.oculus.com/experiences/media/291491408930952/294588341954029/',
+    oculus: 'www.oculus.com/experiences/media/291491408930952/294588341954029/',
   },
   {
     coordinates: [14.583389, 68.243684],
@@ -371,7 +371,7 @@ export const videoData = [
     thumbnail: '037_facebook.png',
     videoID: '9Y5MYQALC-Q',
     categories: ['Vågan', 'Winter', 'Aerials'],
-    https:
+    oculus:
       'https://www.oculus.com/experiences/media/291491408930952/770910013505244/',
   },
   {
@@ -383,7 +383,7 @@ export const videoData = [
     thumbnail: '038_facebook.png',
     videoID: 'GJ9NWCeTUwk',
     categories: ['Vågan', 'Spring'],
-    https:
+    oculus:
       'https://www.oculus.com/experiences/media/291491408930952/395899348370947/',
   },
   {
@@ -395,7 +395,7 @@ export const videoData = [
     thumbnail: '039_facebook.png',
     videoID: 'giErGb8oZvE',
     categories: ['Vågan', 'Spring'],
-    https:
+    oculus:
       'https://www.oculus.com/experiences/media/291491408930952/228191218910815/',
   },
   {
@@ -407,7 +407,7 @@ export const videoData = [
     thumbnail: '040_facebook.png',
     videoID: 'XB7f6TcKEcM',
     categories: ['Vågan', 'Winter', 'Activies'],
-    https:
+    oculus:
       'https://www.oculus.com/experiences/media/291491408930952/245029490368715/',
   },
   {
@@ -419,7 +419,7 @@ export const videoData = [
     thumbnail: '042_facebook.png',
     videoID: 'seV_BrGxl4s',
     categories: ['Vågan', 'Winter', 'Aerials'],
-    https:
+    oculus:
       'https://www.oculus.com/experiences/media/291491408930952/430570291540506/',
   },
   {
@@ -431,7 +431,7 @@ export const videoData = [
     thumbnail: '043_facebook.png',
     videoID: 'C0xvKhtxwfw',
     categories: ['Vågan', 'Winter', 'Aerials'],
-    https:
+    oculus:
       'https://www.oculus.com/experiences/media/291491408930952/490856742327819/',
   },
   {
@@ -443,7 +443,7 @@ export const videoData = [
     thumbnail: '044_facebook.png',
     videoID: 'uKlyMKxbocU',
     categories: ['Vågan', 'Winter', 'Aerials'],
-    https:
+    oculus:
       'https://www.oculus.com/experiences/media/291491408930952/227151559090652/',
   },
   {
@@ -455,7 +455,7 @@ export const videoData = [
     thumbnail: '046_facebook.png',
     videoID: 'lsICTle9Da4',
     categories: ['Moskenes', 'Winter', 'Aerials'],
-    https:
+    oculus:
       'https://www.oculus.com/experiences/media/291491408930952/708138446533606/',
   },
   {
@@ -467,7 +467,7 @@ export const videoData = [
     thumbnail: '047_facebook.png',
     videoID: 'guOflqRNJ3I',
     categories: ['Flakstad', 'Winter', 'Aerials'],
-    https:
+    oculus:
       'https://www.oculus.com/experiences/media/291491408930952/1317283505316573/',
   },
   {
@@ -479,7 +479,7 @@ export const videoData = [
     thumbnail: '048_facebook.png',
     videoID: 'a5qKrXhqBuY',
     categories: ['Flakstad', 'Winter', 'Aerials'],
-    https:
+    oculus:
       'https://www.oculus.com/experiences/media/291491408930952/2776041639377300/',
   },
 ]
