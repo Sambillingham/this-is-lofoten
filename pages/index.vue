@@ -9,10 +9,8 @@
         </nav>
 
         <video autoplay muted loop playsinline width="100%" class="video">
-          <source
-            :src="require(`~/assets/video/til-raw.mp4`)"
-            type="video/mp4"
-          />
+          <source :src="require(`~/assets/video/til.mp4`)" type="video/mp4" />
+          <source :src="require(`~/assets/video/til.webm`)" type="video/webm" />
         </video>
 
         <div class="content">
