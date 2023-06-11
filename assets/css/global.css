@@ -1,0 +1,22 @@
+.tikkio-widget-events > .tikkio-widget-event {
+    width: 100% !important;
+}
+.tikkio-widget-event-inside {
+    border-radius: 0.5rem;
+}
+.tikkio-widget-event-image {
+    display: none !important;
+}
+.tikkio-widget-event-title {
+    display: none !important;
+}
+
+.tikkio-widget-event-inner-content {
+    height: auto !important; 
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.tikkio-widget-buy-ticket {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
