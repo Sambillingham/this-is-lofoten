@@ -141,7 +141,15 @@ export default {
   z-index: 0;
   transform: rotate(180deg);
   opacity: 0.75;
+  display: none;
 }
+@media screen and (min-width: 900px) {
+  .contours-bg {
+    display: inline-block;
+  }
+}
+
+
 .intro {
   width: 100%;
   position: relative;
