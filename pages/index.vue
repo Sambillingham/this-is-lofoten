@@ -128,8 +128,8 @@ export default {
   min-width: 100vw;
   background: url('~assets/img/til.jpeg');
   background-size: cover;
-  background-attachment: fixed;
 }
+
 .contours-bg {
   position: absolute;
   top: 0;
