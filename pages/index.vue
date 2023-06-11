@@ -128,6 +128,8 @@ export default {
   min-width: 100vw;
   background: url('~assets/img/til.jpeg');
   background-size: cover;
+  position: fixed;
+  overflow: scroll;
 }
 
 .contours-bg {
