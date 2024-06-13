@@ -10,12 +10,12 @@
         <img :src="require('~/assets/img/nav-header.svg')" class="nav-bg" />
         <h1><span class="l1">This is</span><span class="l2"> Lofoten</span></h1>
       </header>
-      <nuxt-link to="/map">
+      <nuxt-link to="/">
         <h2>Map</h2>
       </nuxt-link>
-      <nuxt-link to="/">
-        <h2>Screenings</h2>
-      </nuxt-link>
+      <!-- <nuxt-link to="/">
+        <h2>Screenings</h2> -->
+      <!-- </nuxt-link> -->
       <nuxt-link to="/about">
         <h2>About</h2>
       </nuxt-link>
