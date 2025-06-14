@@ -3,22 +3,20 @@
     <Navbar />
     <h2 class="content-title">Contact</h2>
     <div class="content">
+      <p>
+        <a href="https://filmlofoten.com">www.filmlofoten.com</a>
+      </p>
       <address>
-        www.lofotenfilm.com<br />
         Lofoten Film Collective<br />
-        Sjøgata 3<br />
+        Torggata 16<br />
         8310 Kabelvåg<br />
         Norway<br />
       </address>
 
       <p>
-        <a href="https://lofotenfilm.com">www.lofotenfilm.com</a>
-      </p>
-
-      <p>
         <svg
-          class="email"
           id="Layer_1"
+          class="email"
           version="1.1"
           xmlns:cc="http://creativecommons.org/ns#"
           xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -45,7 +43,7 @@
           </g>
         </svg>
 
-        <a href="matilto:inge@lofotenfilm.com">inge@lofotenfilm.com</a>
+        <a href="mailto:inge@filmlofoten.com">inge@filmlofoten.com</a>
       </p>
 
       <p>
